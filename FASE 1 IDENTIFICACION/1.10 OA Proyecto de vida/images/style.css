@@ -1,0 +1,173 @@
+/* Botón con escala*/
+.btn {transition: 0.15s;
+	transform: scale(1) !important;}
+.btn:hover {transform: scale(1.20) !important;}
+
+#Stage, .box-shadow {
+    box-shadow: 0 0 25px rgba(0,0,0,0.75);
+}
+
+@font-face {
+  font-family:'abel';
+  src: url('abel.ttf');
+  src: url('abel.eot?#iefix') format('embedded-opentype'), url('abel.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#Stage_menu_opciones_contenido_opciones_bt_opciones6 {
+    visibility: hidden;
+/* botones navegacion*/
+.bt_introduccion:hover { background-image:url(bt_introduccion_b.svg) !important;}
+.bt_home:hover { background-image:url(bt_home_b.svg) !important;}
+.bt_siguiente:hover { background-image:url(bt_siguiente_b.svg) !important;}
+.bt_anterior:hover { background-image:url(bt_anterior_b.svg) !important;}
+.bt_zoom_in:hover { background-image:url(bt_zoom_in_b.svg) !important;}
+.bt_zoom_out:hover { background-image:url(bt_zoom_out_b.svg) !important;}
+.btcerrar:hover { background-image:url(btcerrar_b.svg) !important;}
+.btver:hover { background-image:url(btver_b.svg) !important;}
+
+/* botones menú opciones*/
+.bt_opciones1:hover { background-image:url(bt_opciones1_b.svg) !important;}
+.bt_opciones2:hover { background-image:url(bt_opciones2_b.svg) !important;}
+.bt_opciones3:hover { background-image:url(bt_opciones3_b.svg) !important;}
+.bt_opciones4:hover { background-image:url(bt_opciones4_b.svg) !important;}
+.bt_opciones5:hover { background-image:url(bt_opciones5_b.svg) !important;}
+.bt_opciones6:hover { background-image:url(bt_opciones6_b.svg) !important;}
+
+/* botones menú OA*/
+.bt1:hover { background-image:url(bt1_b.svg) !important;}
+.bt2:hover {background-image: url(bt2_b.svg) !important;}
+.bt3:hover {background-image: url(bt3_b.svg) !important;}
+
+
+/* botones temas*/
+.btsub1:hover { background-image:url(btsub1_b.svg) !important;}
+.btsub2:hover { background-image:url(btsub2_b.svg) !important;}
+.btsub3:hover { background-image:url(btsub3_b.svg) !important;}
+.btsub4:hover { background-image:url(btsub4_b.svg) !important;}
+.btsub5:hover { background-image:url(btsub5_b.svg) !important;}
+.btsub6:hover { background-image:url(btsub6_b.svg) !important;}
+.btsub7:hover { background-image:url(btsub7_b.svg) !important;}
+
+.btpla1:hover { background-image:url(btpla1_b.svg) !important;}
+.btpla2:hover { background-image:url(btpla2_b.svg) !important;}
+.btpla3:hover { background-image:url(btpla3_b.svg) !important;}
+.btpla4:hover { background-image:url(btpla4_b.svg) !important;}
+
+.btcar:hover { background-image:url(btcar_b.svg) !important;}
+
+.bt4_sub5:hover { background-image:url(bt4_sub5_b.svg) !important;}
+.bt4_sub6:hover { background-image:url(bt4_sub6_b.svg) !important;}
+.bt4_sub7:hover { background-image:url(bt4_sub7_b.svg) !important;}
+.bt6_sub1:hover { background-image:url(bt6_sub1_b.svg) !important;}
+.bt6_sub2:hover { background-image:url(bt6_sub2_b.svg) !important;}
+.bt6_sub3:hover { background-image:url(bt6_sub3_b.svg) !important;}
+
+.btn_s1:hover { background-image:url(bt_arq1b.svg) !important;}
+.btn_s2:hover { background-image:url(bt_arq2b.svg) !important;}
+.btn_s3:hover { background-image:url(bt_arq3b.svg) !important;}
+.btn_s4:hover { background-image:url(bt_arq4b.svg) !important;}
+.btn_s5:hover { background-image:url(bt_arq5b.svg) !important;}
+.btn_s6:hover { background-image:url(bt_arq6b.svg) !important;}
+.btn_s7:hover { background-image:url(bt_arq7b.svg) !important;}
+
+
+.btn_d1:hover { background-image:url(bt_1t2d_b.svg) !important;}
+.btn_d2:hover { background-image:url(bt_2t2d_b.svg) !important;}
+.btn_d3:hover { background-image:url(bt_3t2d_b.svg) !important;}
+.btn_d4:hover { background-image:url(bt_4t2d_b.svg) !important;}
+.btn_d5:hover { background-image:url(bt_5t2d_b.svg) !important;}
+
+.btnx {
+	transition: 0.1s;
+}
+.btnx:hover {
+	transform: translateX(8px) !important;
+	
+}
+
+.volver {
+	transition: 0.1s;
+}
+.volver:hover {
+	transform: translateX(-8px) !important;
+	
+}
+
+
+.bt_tapa:hover {background-image: url(bt_tapa.svg) !important;}
+
+
+.tipos:hover {background-image: url(ver_tiposb.svg) !important;}
+.cuadro:hover {background-image: url(ver_cuadrob.svg) !important;}
+.estilos:hover {background-image: url(estilosb.svg) !important;}
+
+
+
+.btn_ant:hover {background-image: url(bt_anteriorb.svg) !important;}
+.btn_sig:hover {background-image: url(bt_siguienteb.svg) !important;}
+
+
+
+.btn_cerrar:hover {
+	background-image: url(bt_cerrar_b.svg) !important;
+	transform: scale(1.1) !important;
+	-webkit-transform-: scale(1.1) !important;
+}
+.btn_cerrar2:hover {
+	background-image: url(bt_cerrar_b.svg) !important;
+
+}
+
+.p1 {
+  background-image:url(bt1.svg);
+  -webkit-transform-: scale(1.3) !important;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+
+.texto14 { font-size:24px
+ }
+
+/*Fuente*/
+@font-face {
+  font-family:'ailerons';
+  src: url('ailerons.ttf');
+  src: url('ailerons.eot?#iefix') format('embedded-opentype'), url('ailerons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Viñeta*/
+ul { list-style-image:url(img_lista.png);
+height:auto;}
+
+
+/*Viñeta*/
+.dos ul { list-style-image:url(img_lista2.png);
+height:auto;}
+
+
+/*Tabla*/
+table {
+    border-collapse: collapse;
+	width: 100%;
+	background:#FFFFFF;
+}
+
+th, td {
+	border: 1px solid #E3E1E1;
+	padding: 5px 8px;
+}
+
+tr:nth-child(odd){background-color: #f2f2f2}
+
+th {
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background-color: #a35f31;
+}
+

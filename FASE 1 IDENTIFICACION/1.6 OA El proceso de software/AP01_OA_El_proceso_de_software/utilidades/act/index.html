@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+	  	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	       More info: h5bp.com/i/378 -->
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	  	<title>OA Proceso de Software.</title>
+	  	<meta name="description" content="Actividad de afianzamiento SENA">
+
+	  	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	  	<meta name="viewport" content="width=device-width">
+
+	  	<script src="js/jquery-1.9.1.js"></script>
+
+	  	<style>
+	  	* {
+	  		box-sizing: border-box;
+	  	}
+	  	html {
+			background: #ddd;
+			height: 100%;
+	  	}
+
+		body {
+		    /*background: #04AD36;*/
+		    font-family: 'helvetica', sans-serif;
+		}
+
+		/**********************************************************/
+		.box_round {
+		  -webkit-border-radius: 12px; /* Safari 3-4, iOS 1-3.2, Android ≤1.6 */
+		          border-radius: 12px; /* Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+ */
+
+		  /* useful if you don't want a bg color from leaking outside the border: */
+		  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+		}
+		/**********************************************************/
+		.clear { clear: both;}
+
+
+		#bt_cuestionario {
+			position: absolute;
+			width: 333px;
+			height: 222px;
+			left: 695px;
+			top: 350px;
+			background: url('images/Respuesta_multiple.png') no-repeat top left transparent;
+			z-index: 9999;
+		}
+
+		#bt_cuestionario:hover {
+			background: url('images/Respuesta_multiple_rollover.png') no-repeat top left transparent !important;
+			cursor: pointer;
+		}
+
+		#bt_relacionar {
+			position: absolute;
+			width: 278px;
+			height: 296px;
+			left: 80px;
+			top: 287px;
+			background: url('images/Relacionar.png') no-repeat top left transparent;
+			z-index: 9999;
+		}
+
+		#bt_relacionar:hover {
+			background: url('images/Relacionar_rollover.png') no-repeat top left transparent !important;
+			cursor: pointer;
+		}
+
+		#contenedor { width: 1100px; height: 700px; border:0px solid #410000; margin: 50px auto; background: url('images/fondo.jpg') no-repeat top left scroll #ccc; overflow:hidden; position:relative; }
+
+	  	</style>
+
+	  	<script>
+	  		$(function() {
+
+	  			$('#contenedor').on('click','#bt_cuestionario',function(){
+	  				location.href='actividades/cuestionario/index.html';
+	  			})
+
+	  			$('#contenedor').on('click','#bt_relacionar',function(){
+	  				location.href='actividades/relacionar/index.html';
+	  			})
+	  		})
+
+	  	</script>
+	</head>
+  	<body>
+
+
+
+  		<div id='contenedor' class='box_round'>
+
+
+			<div id='bt_cuestionario'></div>
+			<div id='bt_relacionar'></div>
+
+
+  			<div style='clear:both'></div>
+
+
+
+  		</div>
+
+
+  	</body>
+
+</html>

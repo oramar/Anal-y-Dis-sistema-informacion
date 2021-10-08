@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OA Ingeniería de Requerimientos</title>
+  <link rel="stylesheet" href="js/toogle/css/toggles.css">
+  <link rel="stylesheet" href="js/toogle/css/themes/toggles-light.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/actividad.css">
+</head>
+<body>
+
+  <div class="encabezado container">
+    <div class="encabezado__titulo">
+      <h1></h1>
+    </div>
+    <div class="encabezado__audio">
+        <span>¿Audio?</span>
+       <div class="toogle-container">
+          <div class="toggle toggle-light"></div>
+        </div>
+    </div>
+  </div>
+
+  <div id="contenedor">
+
+    <div id="portada">
+      <div class="btn_iniciar"></div>
+    </div>
+
+    <div id="preguntas_1">
+
+      <div id="p1">
+        <div class='opciones'>
+          <div data-preg='p1' data-valor='false' class='respuesta_a r11 uno'></div>
+          <div data-preg='p1' data-valor='true' class='respuesta_a r12 dos'></div>
+        </div>
+      </div>
+
+      <div id="p2">
+        <div class='opciones'>
+          <div data-preg='p2' data-valor='true' class='respuesta_a r21 uno'></div>
+          <div data-preg='p2' data-valor='false' class='respuesta_a r22 dos'></div>
+        </div>
+      </div>
+
+      <div id="p3">
+        <div class='opciones'>
+          <div data-preg='p3' data-valor='true' class='respuesta_a r31 uno'></div>
+          <div data-preg='p3' data-valor='false' class='respuesta_a r32 dos'></div>
+        </div>
+      </div>
+
+      <div id="p4">
+        <div class='opciones'>
+          <div data-preg='p4' data-valor='false' class='respuesta_a r41 uno'></div>
+          <div data-preg='p4' data-valor='true' class='respuesta_a r42 dos'></div>
+        </div>
+      </div>
+
+      <div id="p5">
+        <div class='opciones'>
+          <div data-preg='p5' data-valor='true' class='respuesta_a r51 uno'></div>
+          <div data-preg='p5' data-valor='false' class='respuesta_a r52 dos'></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="preguntas_2">
+      <div class="rb1"></div>
+      <div id="b1">
+        <div class='opciones'>
+          <div data-preg='b1' data-valor='false' class='respuesta_b b11 uno-p animated pulse'></div>
+          <div data-preg='b1' data-valor='true' class='respuesta_b b12 dos-p animated pulse'></div>
+          <div data-preg='b1' data-valor='false' class='respuesta_b b13 tres-p animated pulse'></div>
+          <div data-preg='b1' data-valor='false' class='respuesta_b b14 cuatro-p animated pulse'></div>
+        </div>
+      </div>
+
+      <div id="b2">
+        <div class="rb2"></div>
+        <div class='opciones'>
+          <div data-preg='b2' data-valor='false' class='respuesta_b b21 uno animated pulse'></div>
+          <div data-preg='b2' data-valor='false' class='respuesta_b b22 dos animated pulse'></div>
+          <div data-preg='b2' data-valor='false' class='respuesta_b b23 tres animated pulse'></div>
+          <div data-preg='b2' data-valor='true' class='respuesta_b b24 cuatro animated pulse'></div>
+        </div>
+      </div>
+
+      <div id="b3">
+        <div class="rb3"></div>
+        <div class='opciones'>
+          <div data-preg='b3' data-valor='false' class='respuesta_b b31 uno animated pulse'></div>
+          <div data-preg='b3' data-valor='false' class='respuesta_b b32 dos animated pulse'></div>
+          <div data-preg='b3' data-valor='true' class='respuesta_b b33 tres animated pulse'></div>
+          <div data-preg='b3' data-valor='false' class='respuesta_b b34 cuatro animated pulse'></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="preguntas_3">
+
+      <div class="rc1"></div>
+      <div id="c1">
+        <div class='opciones'>
+          <div data-preg='c1' data-valor='false' class='respuesta_c c11 animated pulse'></div>
+          <div data-preg='c1' data-valor='true' class='respuesta_c c12 animated pulse'></div>
+          <div data-preg='c1' data-valor='false' class='respuesta_c c13 animated pulse'></div>
+          <div data-preg='c1' data-valor='false' class='respuesta_c c14 animated pulse'></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SONIDOS -->
+    <div class='sonidos'>
+      <audio preload>
+        <source src='audios/screen-change.mp3' type='audio/mp3'>
+        <source src='audios/screen-change.ogg' type='audio/ogg'>
+      </audio>
+      <audio preload>
+        <source src='audios/success.mp3' type='audio/mp3'>
+        <source src='audios/success.mp3' type='audio/ogg'>
+      </audio>
+      <audio preload>
+        <source src='audios/fail.mp3' type='audio/mp3'>
+        <source src='audios/fail.ogg' type='audio/ogg'>
+      </audio>
+      <audio preload>
+        <source src='audios/end-game-success.mp3' type='audio/mp3'>
+        <source src='audios/end-game-success.ogg' type='audio/ogg'>
+      </audio>
+      <audio preload>
+        <source src='audios/end-game-fail.mp3' type='audio/mp3'>
+        <source src='audios/end-game-fail.ogg' type='audio/ogg'>
+      </audio>
+    </div>
+
+
+    <div id="resultados">
+      <div class="estadistica">
+
+        <div class="estadistica__puntaje">
+          <div class="estadistica__numero">0/8</div>
+          <div class="estadistica__flecha"></div>
+          <div class="estadistica__porcentaje">10%</div>
+        </div>
+        <div class="estadistica__mensaje">
+          <p>Lamento los pocos aciertos. ¡debes estudiar más!</p>
+        </div>
+        <div class="estadistica__botones">
+          <div class="bt__jugar-de-nuevo"></div>
+        </div>
+      </div><!-- /.estadistica -->
+    </div><!-- /#resultados -->
+
+    <form name="test" id="test"></form>
+  </div>
+
+  <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+  <script src="js/jquery-ui.js" type="text/javascript"></script>
+  <script src="js/toogle/toggles.min.js" type="text/javascript"></script>
+  <script src="js/plugins.js" type="text/javascript"></script>
+  <script src="js/actividad.js" charset="utf-8"></script>
+</body>
+</html>

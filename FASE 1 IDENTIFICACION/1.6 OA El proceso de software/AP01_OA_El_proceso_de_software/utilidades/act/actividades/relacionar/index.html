@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <link rel="stylesheet" type="text/css" href="css/estilos_relacionar.css">
+
+  <title>OA Proceso de Software - Relacionar</title>
+
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/plugins.js" type="text/javascript"></script>
+
+  <script>
+
+
+  $(function() {
+
+    $('audio')[0].load();
+    $('audio')[1].load();
+    $('audio')[2].load();
+    $('audio')[3].load();
+    $('audio')[4].load();
+
+    $('body').on('click','#bt_inicio',function(){
+      location.href='../../index.html';
+    })
+
+    $('body').on('click','.bt__jugar-de-nuevo',function(){
+      $('#test').submit();
+    })
+
+    $('body').on('click','.bt__siguiente-actividad',function(){
+      location.href='../cuestionario/index.html';
+    })
+
+    $('#resultados').hide();
+
+    $('#conceptos').find('ul').find('li').draggable({
+      helper:'clone'
+    })
+
+    $('.question').droppable({
+      activeClass:'selected',
+      hoverClass: 'estado-hover',
+      accept: '.concepto',
+      drop: function(event, ui) {
+        var ul = $(this).find('.respuesta').find('ul');
+        $('audio')[0].play();
+        ui.draggable.fadeOut(function() {
+          ui.draggable.appendTo( ul ).fadeIn();
+          var opciones = $('#conceptos').find('ul').find('li');
+          if( opciones.length < 1 ) {
+            verificar();
+          }
+          $('audio')[0].pause();
+          $('audio')[0].load();
+        });
+      }
+    })
+
+    var aciertos=0;
+    var incorrectas=[];
+
+    function devolverItem($item){
+      $item.fadeOut(function() {
+          $item.appendTo( $('#opciones').find('ul') ).fadeIn();
+      });
+    }
+
+    function verificar() {
+
+      var opciones = $('#conceptos').find('ul').find('li');
+      var preguntas = $('.question');
+      var npreguntas = preguntas.length;
+
+      var estadistica__puntaje = '';
+      var estadistica__porcentaje = '';
+      var estadistica__mensaje = '';
+      var aciertos = 0;
+      var invalidas = 0;
+
+
+      for(var i=0; i<npreguntas; i++) {
+        contexto = $(preguntas[i]);
+        idQ = $(contexto).attr("id").replace('concepto','');
+        R = $('li',contexto);
+        idR = $('li',contexto).attr("id").replace('resp','');
+
+        if(idR==idQ) {
+          aciertos++;
+          $('#concepto'+idQ+'_r').addClass('buena');
+          $('.c'+idQ).addClass('gano');
+        }else {
+          invalidas++;
+          $('#concepto'+idQ+'_r').addClass('mala');
+          $('.c'+idQ).addClass('perdio');
+        }
+      }
+
+      /**************/
+
+      estadistica__puntaje = aciertos + " de " + npreguntas;
+
+      estadistica__porcentaje = Math.floor(aciertos*100/npreguntas);
+
+
+      if(estadistica__porcentaje <= 70)
+        estadistica__mensaje = "Ha tenido pocos aciertos, ¡debe estudiar más!";
+      if(estadistica__porcentaje > 70 && estadistica__porcentaje <= 99)
+        estadistica__mensaje = "¡Buen trabajo!";
+      if(estadistica__porcentaje == 100)
+        estadistica__mensaje = "¡Excelente! ha logrado el mejor puntaje";
+
+
+      $('.estadistica__numero').text(estadistica__puntaje);
+      $('.estadistica__porcentaje').text(estadistica__porcentaje + '%');
+      $('.estadistica__mensaje p').html(estadistica__mensaje);
+
+      var fraccion = aciertos / npreguntas;
+      $('.resultados.circle').circleProgress({
+          value: fraccion,
+          size:150
+      }).on('circle-animation-progress', function(event, progress) {
+          $(this).find('strong').html(parseInt(100 * fraccion) + '<i>%</i>');
+      });
+
+      setTimeout(function() {  $('#resultados').fadeIn(); }, 1200 )
+
+      /*----------------------------------
+      /* Verificamos que sonido ejecutar BIEN o MAL ?
+      /*----------------------------------*/
+      $('audio')[0].pause();
+      $('audio')[1].pause();
+      $('audio')[2].pause();
+
+      if(estadistica__porcentaje > 70)
+        $('audio')[3].play();
+      else
+        $('audio')[4].play();
+
+      /**********************/
+    }
+
+  })
+  </script>
+</head>
+<body>
+
+  <section id='wrap'>
+
+    <form name='test' id='test'></form>
+
+    <div id='lienzo' class='box_round'>
+
+      <div id='bt_inicio'></div>
+
+      <div id='instrucciones'><p>Ordene las siguientes actividades del proceso de software de acuerdo a como ocurren en el modelo en cascada.</p></div>
+
+      <div id='preguntas'>
+
+        <div id='concepto1' class='question conceptocss concepto1'>
+          <div class='respuesta'>
+            <ul class='unstyled'></ul>
+          </div>
+        </div>
+
+
+        <div id='concepto2' class='question conceptocss concepto2'>
+          <div class='respuesta'>
+            <ul class='unstyled'></ul>
+          </div>
+        </div>
+
+
+        <div id='concepto3' class='question conceptocss concepto3'>
+          <div class='respuesta'>
+            <ul class='unstyled'></ul>
+          </div>
+        </div>
+
+
+        <div id='concepto4' class='question conceptocss concepto4'>
+          <div class='respuesta'>
+            <ul class='unstyled'></ul>
+          </div>
+        </div>
+
+
+        <div id='concepto5' class='question conceptocss concepto5'>
+          <div class='respuesta'>
+            <ul class='unstyled'></ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div id='conceptos'>
+        <ul>
+          <li class='concepto' id='resp4'><img src="images/bt_4.png" title='DESARROLLO'></li>
+          <li class='concepto' id='resp1'><img src="images/bt_1.png" title='ESPECIFICACION DE REQUERIMIENTOS'></li>
+          <li class='concepto' id='resp3'><img src="images/bt_3.png" title='MODELADO'></li>
+          <li class='concepto' id='resp2'><img src="images/bt_2.png" title='PLANEACIÓN'></li>
+          <li class='concepto' id='resp5'><img src="images/bt_5.png" title='IMPLANTACIÓN'></li>
+      </ul>
+      </div>
+
+      <div id="resultados">
+        <div class="estadistica">
+          <div class="resultados circle">
+              <strong>90<i>%</i></strong>
+          </div>
+          <div class="estadistica__puntaje">
+            <div class="estadistica__numero">0/8</div>
+            <div class="estadistica__flecha"></div>
+            <div class="estadistica__porcentaje">10%</div>
+          </div>
+          <div class="estadistica__mensaje">
+            <p>Lamento los pocos aciertos. ¡debes estudiar más!</p>
+          </div>
+          <div class="estadistica__botones">
+            <div class="bt__jugar-de-nuevo"></div>
+            <div class="bt__siguiente-actividad"></div>
+          </div>
+        </div><!-- /.estadistica -->
+      </div><!-- /#resultados -->
+
+      <div style='clear:both'></div>
+
+      <div class='sonidos'>
+        <audio preload>
+          <source src='audios/screen-change.mp3' type='audio/mp3'>
+          <source src='audios/screen-change.ogg' type='audio/ogg'>
+        </audio>
+        <audio preload>
+          <source src='audios/success.mp3' type='audio/mp3'>
+          <source src='audios/success.ogg' type='audio/ogg'>
+        </audio>
+        <audio preload>
+          <source src='audios/fail.mp3' type='audio/mp3'>
+          <source src='audios/fail.ogg' type='audio/ogg'>
+        </audio>
+        <audio preload>
+          <source src='audios/end-game-success.mp3' type='audio/mp3'>
+          <source src='audios/end-game-success.ogg' type='audio/ogg'>
+        </audio>
+        <audio preload>
+          <source src='audios/end-game-fail.mp3' type='audio/mp3'>
+          <source src='audios/end-game-fail.ogg' type='audio/ogg'>
+        </audio>
+      </div>
+
+      <div id='cinta'>
+          <div class='c1 circulo normal'></div>
+          <div class='c2 circulo normal'></div>
+          <div class='c3 circulo normal'></div>
+          <div class='c4 circulo normal'></div>
+          <div class='c5 circulo normal'></div>
+      </div>
+
+    </div>
+
+
+    <div class='clear'><br style='line-height: 40px'></div>
+
+  </section>
+</body>
+</html>

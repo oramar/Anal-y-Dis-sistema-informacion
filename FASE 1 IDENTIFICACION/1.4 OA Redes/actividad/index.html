@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+	  	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	       More info: h5bp.com/i/378 -->
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	  	<title>OA REDES</title>
+	  	<meta name="description" content="Actividad de afianzamiento SENA">
+
+	  	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	  	<meta name="viewport" content="width=device-width">	
+
+	  	<script src="src/jquery.js"></script>
+	  	<script src="src/jquery-ui.js"></script>	  	
+
+	  	<link rel="stylesheet" href="src/bootstrap.css">
+
+
+	  	<style>
+		body {
+		    background: #ccc;
+		    font-family: Arial, serif;
+		}
+
+		footer p { padding: 20px;}
+
+
+		.clear { clear: both;}
+
+		#wrap { 
+			position:relative;
+			margin: 40px auto;
+			width:1100px;
+		}	  	
+
+		/**********************************************************/
+		.box_round {
+		  -webkit-border-radius: 12px; /* Safari 3-4, iOS 1-3.2, Android ≤1.6 */
+		          border-radius: 12px; /* Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+ */
+
+		  /* useful if you don't want a bg color from leaking outside the border: */
+		  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+		}			
+		/**********************************************************/
+
+		#lienzo { float:left; position: relative; width:1100px; height:709px; background:url('src/fondo.jpg') top left no-repeat scroll; margin:0px; border:4px solid #001f3f;  }
+
+		.concepto { cursor:move;}
+
+		#preguntas .conceptocss { position: absolute; width:208px; height:39px;text-align: center;padding: 0px;margin: 0px;text-align: center;padding: 0px;margin: 0px; border-radius: 8px; }
+			.concepto1 {left: 632px;top: 119px;}
+			.concepto2 {left: 632px;top: 220px;}
+			.concepto3 {left: 632px;top: 320px;}
+			.concepto4 {left: 632px;top: 420px;}
+			.concepto5 {left: 632px;top: 521px;}
+
+		#conceptos ul { list-style: none; margin:0px; padding:0px; text-align: center;}
+			#conceptos ul li { position:absolute; width: 208px; height: 39px; }
+
+			#conceptos ul li:nth-child(1) {left: 109px;top: 611px;}
+			#conceptos ul li:nth-child(2) {left: 375px;top: 611px;}
+			#conceptos ul li:nth-child(3) {left: 641px;top: 611px;}
+			#conceptos ul li:nth-child(4) {left: 233px;top: 662px;}
+			#conceptos ul li:nth-child(5) {left: 505px;top: 662px;}
+
+		.selected {
+			background:#00A1D8;
+		}
+
+		#resultados { 
+			position:relative; width:1100px; height:709px; color:#111111; background: rgba(0,0,0,0.5); 
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			z-index: 9999;
+		}
+		#estadistica { 
+			display: none; 
+			background: rgb(255,255,255); 
+			background:rgba(255,255,255,0.8); 
+			border: 4px solid #000000;
+			font-size: 24px;
+			font-weight: bold;
+			height: 235px;
+			width: 340px;
+			padding-top: 24px;
+			z-index: 9999;
+		}
+
+			#calificacion { display: flex; align-items: center; justify-content: center; flex-direction: column; }
+			.msjload { font-size: 10px; color:#c00; line-height: 0.8em; font-weight: normal;}
+			.fallas { font-size: 11px; line-height: 1em !important; padding:7px !important; width:315px !important; text-align: left !important;}
+				.fallas h3 { background:#c00; color:#fff; font-size: 12px; padding:3px; margin:0 0 10px 0; line-height: 1em;}
+				.fallas p { font-weight: normal; }
+
+			.load,.btnIntentar {display:none;}
+
+			#mensaje1 {
+				margin-bottom: 12px;
+			}
+
+		.box_round {
+		  -webkit-border-radius: 12px; /* Safari 3-4, iOS 1-3.2, Android ≤1.6 */
+		          border-radius: 12px; /* Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+ */
+		
+		  /* useful if you don't want a bg color from leaking outside the border: */
+		  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+		}
+
+		/*=================  Posicionar Cinta de Números ===================*/
+		.circulo {
+		  position: absolute;
+		  width: 47px;
+		  height: 47px;
+		  line-height: 47px;
+		  text-align: center;
+		  left: 847px;
+		  display: none;
+		}
+
+		.circulo.gano {
+ 			background: url('src/bt_bien.png') no-repeat left top scroll;
+ 			display: block;
+		}
+		.circulo.perdio {
+ 			background: url('src/bt_mal.png') no-repeat left top scroll;
+ 			display: block;
+		}
+
+		.c1 { top: 116px; }
+		.c2 { top: 217px; }
+		.c3 { top: 317px; }
+		.c4 { top: 418px; }
+		.c5 { top: 520px; }
+	  	</style>
+
+	  	<script>
+
+
+	  	$(function() {
+
+  			$('audio')[0].load();
+	  		$('audio')[1].load();
+	  		$('audio')[2].load();
+			$('audio')[3].load();
+			$('audio')[4].load();
+
+			$('#resultados').hide();
+
+	  		$('#btnsubmit').click(function() { $('#test').submit(); })
+
+
+	  		$('#conceptos').find('ul').find('li').draggable({
+	  			helper:'clone'	  			
+	  		})
+
+	  		$('.question').droppable({
+	  			activeClass:'selected',
+	  			hoverClass: 'estado-hover',
+	  			accept: '.concepto',
+	  			drop: function(event, ui) {
+	  				var ul = $(this).find('.respuesta').find('ul');
+	  				$('audio')[0].play();	
+                    ui.draggable.fadeOut(function() {
+                        ui.draggable.appendTo( ul ).fadeIn();
+                        var opciones = $('#conceptos').find('ul').find('li');
+
+                    	if( opciones.length < 1 ) {
+                    		verificar();
+                    	}
+						$('audio')[0].pause();
+						$('audio')[0].load();
+
+                    });
+	  			}
+	  		})
+
+
+
+	  		var aciertos=0;
+	  		var incorrectas=[];
+            //var $questions=$('#conceptos');
+
+            function devolverItem($item){
+                $item.fadeOut(function() {
+                    //var $list = $questions;
+                    $item.appendTo( $('#opciones').find('ul') ).fadeIn();
+                });                    
+            }
+
+	  		function verificar() {
+
+	  			var opciones = $('#conceptos').find('ul').find('li');
+	  			var preguntas = $('.question');
+	  			var npreguntas = preguntas.length;
+
+	  			//var arrayDevolver = new Array();
+	  			aciertos=0;
+	  			invalidas=0;
+
+	  			for(var i=0; i<npreguntas; i++) {
+	  				var contexto=$(preguntas[i]);
+	  				var idQ=$(contexto).attr("id").replace('concepto','');
+	  				var R = $('li',contexto);
+
+	  				//$('#concepto'+idQ+'_r').removeClass('error');
+
+	  				var idR=$('li',contexto).attr("id").replace('resp','');
+	  				var nimg = R.data('img');
+
+	  				//console.log('idR = ',idR,' -- idQ = ',idQ);
+
+	  				if(idR==idQ) {
+	  					aciertos++;
+	  					R.html('<img src="src/botones/bt_'+nimg+'_verde.png">');
+	  					$('.c'+idQ).addClass('gano');	  	
+	  				}else {
+	  					invalidas++;
+	  					R.html('<img src="src/botones/bt_'+nimg+'_rojo.png">');
+	  					$('.c'+idQ).addClass('perdio');	  	
+	  				}
+	  			}
+
+	  			aciertosTotales = aciertos;
+
+	  			$('#resultados').fadeIn();
+
+	  			/**************/
+				var numeroPreguntas=5;
+				var buenas=aciertosTotales;
+				$("#puntaje").text( buenas + "/" +numeroPreguntas);
+				dato_porcentaje= Math.floor(buenas*100/numeroPreguntas);
+				$("#porcentaje").text( dato_porcentaje + "%");
+				if(dato_porcentaje <= 20){$("#mensaje").text("Ha tenido pocos aciertos. ¡Debe estudiar más!");}
+				if(dato_porcentaje > 20 && dato_porcentaje <= 70){$("#mensaje").text("Ha tenido pocos aciertos. ¡Debe estudiar más!");}
+				if(dato_porcentaje > 70 && dato_porcentaje <= 80){$("#mensaje").text("¡Buen trabajo!");}
+				if(dato_porcentaje > 80 && dato_porcentaje <= 99){$("#mensaje").text("¡Buen trabajo!");}
+				if(dato_porcentaje == 100){$("#mensaje").text("¡Felicidades! ha logrado el mejor puntaje");}
+
+				if(dato_porcentaje <= 70) {
+					$('#guia').addClass('triste');
+				}else {
+					$('#guia').addClass('alegre');
+				}
+
+				$('#estadistica').show('bounce',{ },1200);
+				$('#mensaje').fadeIn("slow");
+
+				$('audio')[0].pause();
+				$('audio')[1].pause();
+				$('audio')[2].pause();
+				if(dato_porcentaje > 70) $('audio')[3].play();
+				else $('audio')[4].play();
+
+				/**********************/
+
+	  			$('#verificar').hide();
+	  			$('#btnsubmit').show();
+
+
+	  		}
+
+	  	})
+	  	</script>
+	</head>
+  	<body>
+
+  		<section id='wrap'>
+	  		<form name='test' id='test'></form>
+	  		<div id='lienzo' class="box_round">
+
+				<!--<button class='btn btn-success btn-large' id='verificar'>Verificar Respuesta</button>-->
+				
+
+	  			<div id='preguntas'>
+			  		<div id='concepto1' class='question conceptocss concepto1'>
+			  			<div class='respuesta'>
+			  				<ul class='unstyled'></ul>
+			  			</div>
+			  		</div>
+
+			  		<div id='concepto2' class='question conceptocss concepto2'>
+			  			<div class='respuesta'>
+			  				<ul class='unstyled'></ul>
+			  			</div>
+			  		</div>
+
+			  		<div id='concepto3' class='question conceptocss concepto3'>
+			  			<div class='respuesta'>
+			  				<ul class='unstyled'></ul>
+			  			</div>
+			  		</div>
+
+
+			  		<div id='concepto4' class='question conceptocss concepto4'>
+			  			<div class='respuesta'>
+			  				<ul class='unstyled'></ul>
+			  			</div>
+			  		</div>
+
+			  		<div id='concepto5' class='question conceptocss concepto5'>
+			  			<div class='respuesta'>
+			  				<ul class='unstyled'></ul>
+			  			</div>
+			  		</div>
+
+			  	</div>
+
+		  		<div id='conceptos'>
+		  			<ul>
+		  				<li class='concepto' id='resp5' data-img='2'><img src="src/botones/bt_2.png" title='SERVIDORES'></li>
+		  				<li class='concepto' id='resp3' data-img='3'><img src="src/botones/bt_3.png" title='NIVEL DE SESION'></li>
+						<li class='concepto' id='resp4' data-img='1'><img src="src/botones/bt_1.png" title='ALMACENAMIENTO'></li>
+						<li class='concepto' id='resp2' data-img='4'> <img src="src/botones/bt_4.png" title='INALÁMBRICA'></li>
+		  				<li class='concepto' id='resp1' data-img='5'><img src="src/botones/bt_5.png" title='RED'></li>
+					</ul>  			
+		  		</div>		 					  		
+
+				<div id="resultados">
+			    	<div id='estadistica' class='box_round'>
+			    		<div id='calificacion'>
+			    			<div id='mensaje1'>
+				    			<table align='center' style='width:150px;'>
+					    			<tr>
+					    				<td width='33%' align='center' valign='middle'>
+											<div id='puntaje'>0/8</div>
+										</td>
+										<td width='34%' align='center' valign='middle'>
+											<div><img src='src/flecha.png'></div>
+										</td>
+										<td width='33%' align='center' valign='middle'>
+											<div id='porcentaje'>0%</div>
+										</td>
+									</td></tr>
+									<tr><td align='center' colspan='3'><br>
+										<div id='mensaje' style='font-size:16px; font-family: Helvetica, sans-serif; color:#444;'>Ha tenido pocos aciertos. ¡Debe estudiar más!</div>    	
+									</td></tr>									
+								</table>
+							</div>
+							<button class='btn btn-danger btn-large' id='btnsubmit'>Volver a Jugar</button>
+						</div>
+			    	</div>					
+				</div>
+
+
+  				<div style='clear:both'></div>
+
+				<div class='sonidos'>
+					<audio preload>
+					  <source src='audios/screen-change.mp3' type='audio/mp3'>
+					  <source src='audios/screen-change.ogg' type='audio/ogg'>
+					</audio>
+					<audio preload>
+					  <source src='audios/success.mp3' type='audio/mp3'>
+					  <source src='audios/success.ogg' type='audio/ogg'>
+					</audio>
+					<audio preload>
+					  <source src='audios/fail.mp3' type='audio/mp3'>
+					  <source src='audios/fail.ogg' type='audio/ogg'>
+					</audio>
+					<audio preload>
+					  <source src='audios/end-game-success.mp3' type='audio/mp3'>
+					  <source src='audios/end-game-success.ogg' type='audio/ogg'>
+					</audio>
+					<audio preload>
+					  <source src='audios/end-game-fail.mp3' type='audio/mp3'>
+					  <source src='audios/end-game-fail.ogg' type='audio/ogg'>
+					</audio>  
+				</div>	  			
+	  		</div>
+	  		
+			<div id='cinta'>
+				<!-- <div class='cinta'> -->						
+					<div class='c1 circulo normal'></div>
+					<div class='c2 circulo normal'></div>
+					<div class='c3 circulo normal'></div>
+					<div class='c4 circulo normal'></div>
+					<div class='c5 circulo normal'></div>
+				<!-- </div> -->
+			</div>  	
+
+			<div class='clear'><br style='line-height: 40px'></div>
+
+	  	</section>
+  	</body>  	
+</html>  	

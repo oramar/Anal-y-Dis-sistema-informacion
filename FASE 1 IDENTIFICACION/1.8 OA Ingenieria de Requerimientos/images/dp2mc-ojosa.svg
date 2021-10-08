@@ -1,0 +1,42 @@
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="53.367px" height="13.83px" viewBox="0 0 53.367 13.83" enable-background="new 0 0 53.367 13.83"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<path fill="#452109" d="M53.264,6.542c0,0-0.459-7.222-7.181-6.49S33.298,0.9,33.496,8.221
+		C33.365,10.487,45.905,10.421,53.264,6.542z"/>
+	<path fill="#FFFFFF" d="M53.367,8.087c0,0-0.994-6.423-7.717-5.691S33.117,4.929,33.423,9.423
+		C33.292,11.689,46.008,11.966,53.367,8.087z"/>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M53.367,8.087c0,0-0.994-6.423-7.717-5.691S33.117,4.929,33.423,9.423
+				C33.292,11.689,46.008,11.966,53.367,8.087z"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<circle clip-path="url(#SVGID_2_)" fill="#A85715" cx="42.679" cy="7.135" r="5.425"/>
+		<circle clip-path="url(#SVGID_2_)" fill="#3D1800" cx="42.679" cy="7.135" r="3.154"/>
+		<circle clip-path="url(#SVGID_2_)" fill="#FFFFFF" cx="39.389" cy="7.012" r="1.399"/>
+	</g>
+	<path fill="#452109" d="M0.009,9.264c0,0-0.505-7.163,6.204-7.333S18.897,1.074,19.672,8.3C20.1,10.511,7.759,12.105,0.009,9.264z"
+		/>
+	<path fill="#FFFFFF" d="M0.111,10.797c0,0,0.128-6.448,6.837-6.618c6.709-0.169,12.66,0.832,12.954,5.292
+		C20.33,11.683,7.861,13.638,0.111,10.797z"/>
+	<g>
+		<defs>
+			<path id="SVGID_3_" d="M0.111,10.797c0,0,0.128-6.448,6.837-6.618c6.709-0.169,12.66,0.832,12.954,5.292
+				C20.33,11.683,7.861,13.638,0.111,10.797z"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<circle clip-path="url(#SVGID_4_)" fill="#A85715" cx="10.497" cy="8.447" r="5.383"/>
+		<circle clip-path="url(#SVGID_4_)" fill="#3D1800" cx="10.497" cy="8.447" r="3.13"/>
+		<circle clip-path="url(#SVGID_4_)" fill="#FFFFFF" cx="13.716" cy="7.891" r="1.388"/>
+	</g>
+</g>
+</svg>

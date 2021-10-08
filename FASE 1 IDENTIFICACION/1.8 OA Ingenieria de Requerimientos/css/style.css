@@ -1,0 +1,218 @@
+body {
+	background-image: url('../images/main-bg.svg');
+    background-color: #FFFFFF;
+    background-size: contain;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+.size-opacity, .arrow {
+	cursor: pointer;
+	transition:0.25s;
+}
+.size-opacity:hover, .arrow:hover {
+	opacity: 0.75;
+	padding: 25px;
+	margin: -25px !important;
+	/*z-index:999 !important;
+	border-radius: 50px;*/
+}
+.rotate360 {
+	cursor: pointer;
+	transition:0.25s;
+	transform: rotateZ(0deg) !important;
+}
+.rotate360:hover {
+	transform: rotateZ(-360deg) !important;
+	margin: -30px !important;
+	padding: 30px;
+	/*z-index:999 !important;
+	border-radius: 50px;*/
+}
+.zoom-slow {
+    cursor: zoom-in;
+    transition:0.25s !important;
+}
+.zoom-slow:hover {
+    transform: scale(1.7) !important;
+    background-color:white !important;
+    padding:2px !important;
+    z-index:999;
+}
+/*sm-interfaz*/
+.interfaz-ln, .interfaz-pyr, .interfaz-menus, .interfaz-fes, .interfaz-lc, .interfaz-grafica {
+	transition: 0.25s;
+	cursor: pointer;
+}
+.interfaz-ln:hover {
+	background-image: url(../images/interfaz-sm_ln.gif) !important;
+	margin: -5px !important;
+	padding: 5px;
+}
+.interfaz-pyr:hover {
+	background-image: url(../images/interfaz-sm_pyr.gif) !important;
+	margin: -5px !important;
+	padding: 5px;
+}
+.interfaz-menus:hover {
+	background-image: url(../images/interfaz-sm_menus.gif) !important;
+	margin: -5px !important;
+	padding: 5px;
+}
+.interfaz-fes:hover {
+	background-image: url(../images/interfaz-sm_fes.gif) !important;
+	margin: -5px !important;
+	padding: 5px;
+}
+.interfaz-lc:hover {
+	background-image: url(../images/interfaz-sm_lc.gif) !important;
+	margin: -5px !important;
+	padding: 5px;
+}
+.interfaz-grafica:hover {
+	background-image: url(../images/interfaz-sm_graficas.gif) !important;
+	margin: -5px !important;
+	padding: 5px;
+}
+/*scroll bar*/
+::-webkit-scrollbar {
+      width: 13px;
+}
+::-webkit-scrollbar-track {
+      /* background-color: white; */
+      border: solid 1.5px;
+      border-radius:8px;
+} 
+::-webkit-scrollbar-thumb {
+      background-color: #ffcc03;
+      border-radius: 8px;
+} 
+::-webkit-scrollbar-button {
+      background: #ffcc03;
+      cursor: pointer !important;
+      display: none;
+}
+::-webkit-scrollbar-corner {
+      background-color: black;
+}
+/*2017*/
+.btn-intro, .mm-intro, .mm-definicion, .mm-clases, .mm-etapas, .mm-comentarios, .mm-ejemplos, .funcional-v, .funcional-h, .sm-bloque, .sm-integrado, .sm-cadena, .sm-aleman, .bw, .fw {
+	transition: 0.25s ease-in;
+	cursor: pointer;
+}
+.btn-intro:hover {
+	background-image: url(../images/btn-intro-a.svg) !important;
+	margin:-30px !important;
+	padding:30px;
+}
+.mm-intro:hover {
+	background-image: url(../images/mm_intro-a.svg) !important;
+	margin:-10px !important;
+	padding: 10px;
+	-moz-margin: -10px;
+	-moz-padding: 10px;
+}
+.mm-definicion:hover {
+	background-image: url(../images/mm_definicion-a.svg) !important;
+	margin:-10px !important;
+	padding: 10px;
+	-moz-margin: -10px;
+	-moz-padding: 10px;
+}
+.mm-clases:hover {
+	background-image: url(../images/mm_clases-a.svg) !important;
+	margin:-10px !important;
+	padding: 10px;
+	-moz-margin: -10px;
+	-moz-padding: 10px;
+}
+.mm-etapas:hover {
+	background-image: url(../images/mm_etapas-a.svg) !important;
+	margin:-10px !important;
+	padding: 10px;
+	-moz-margin: -10px;
+	-moz-padding: 10px;
+}
+.mm-comentarios:hover {
+	background-image: url(../images/mm_comentarios-a.svg) !important;
+	margin:-10px !important;
+	padding: 10px;
+	-moz-margin: -10px;
+	-moz-padding: 10px;
+}
+.mm-ejemplos:hover {
+	background-image: url(../images/mm_ejemplos-a.svg) !important;
+	margin:-10px !important;
+	padding: 10px;
+	-moz-margin: -10px;
+	-moz-padding: 10px;
+}
+.funcional-v:hover {
+	background-image: url(../images/funcionnal-1-btn_vertical-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+}
+.funcional-h:hover {
+	background-image: url(../images/funcionnal-1-btn_horizontal-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+}
+.sm-bloque:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_bloques-a.svg) !important;
+}
+.sm-integrado:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_integrado-a.svg) !important;
+}
+.sm-cadena:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_cadena-a.svg) !important;
+}
+.sm-aleman:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_aleman-a.svg) !important;
+}
+.bw:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/pagination_bw-a.svg) !important;
+}
+.fw:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/pagination_fw-a.svg) !important;
+}
+/*opciones-menú*/
+.op-map, .op-ad, .op-glo, .op-bi, .op-pdf, .op-oa, .op-trigger {
+	cursor: pointer;
+	transition: 0.25s linear;
+}
+.op-trigger:hover {
+	filter: grayscale(1);
+}
+.op-map:hover {
+	background-image: url(../images/opciones_mapa-a.svg) !important;
+}
+.op-ad:hover {
+	background-image: url(../images/opciones_ad-a.svg) !important;
+}
+.op-glo:hover {
+	background-image: url(../images/opciones_glosario-a.svg) !important;
+}
+.op-bi:hover {
+	background-image: url(../images/opciones_bibliografia-a.svg) !important;
+}
+.op-pdf:hover {
+	background-image: url(../images/opciones_pdf-a.svg) !important;
+}
+.op-oa:hover {
+	background-image: url(../images/opciones_oa-a.svg) !important;
+}
+text, tspan {
+	font-family: arial !important;
+}

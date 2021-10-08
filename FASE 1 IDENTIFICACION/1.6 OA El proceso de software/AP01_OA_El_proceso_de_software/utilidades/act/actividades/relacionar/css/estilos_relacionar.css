@@ -1,0 +1,280 @@
+body {
+  background: #ccc;
+  font-family: Arial, serif; }
+
+/********************************************************* */
+.box_round {
+  border-radius: 12px;
+  background-clip: padding-box; }
+
+/********************************************************* */
+footer p {
+  padding: 20px; }
+
+.clear {
+  clear: both; }
+
+#instrucciones {
+  display: block;
+  width: 612px;
+  position: absolute;
+  left: 388px;
+  top: 581px; }
+  #instrucciones p {
+    text-align: justify;
+    font: 300 16px/1.4em "helvetica", sans-serif; }
+
+.right span {
+  font-size: 14px;
+  color: #fff; }
+
+ul, li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+
+#bt_inicio {
+  position: absolute;
+  width: 105px;
+  height: 52px;
+  left: 15px;
+  top: 51px;
+  background: url("../images/bt_inicio.png") no-repeat top left transparent;
+  z-index: 9999; }
+  #bt_inicio:hover {
+    background: url("../images/bt_inicio_hover.png") no-repeat top left transparent !important;
+    cursor: pointer; }
+
+#wrap {
+  position: relative;
+  margin: 40px auto;
+  width: 1100px; }
+
+#lienzo {
+  float: left;
+  position: relative;
+  width: 1100px;
+  height: 680px;
+  background: url("../images/fondo.jpg") top left no-repeat scroll;
+  z-index: 99;
+  margin: 0px; }
+
+#resultados {
+  position: relative;
+  width: 1100px;
+  height: 680px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.estadistica {
+  width: 628px;
+  height: 496px;
+  background: url("../images/marco.png") center center no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #444; }
+
+.estadistica__puntaje {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px; }
+
+.estadistica__numero, .estadistica__porcentaje {
+  width: 110px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px; }
+
+.estadistica__flecha {
+  position: relative; }
+  .estadistica__flecha:before {
+    content: "";
+    display: block;
+
+    border-style: solid;
+    border-width: 15px 0px 15px 15px;
+    border-color: transparent transparent transparent #71C5F3;
+  }
+
+.estadistica__mensaje {
+  width: 65%; }
+  .estadistica__mensaje p {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #444; }
+
+.estadistica__botones {
+  height: 100px;
+  width: 420px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.bt, .bt__jugar-de-nuevo, .bt__siguiente-actividad {
+  display: block;
+  width: 220px;
+  height: 82px;
+  cursor: pointer; }
+
+.bt__jugar-de-nuevo {
+  background: url("../images/jugar_de_nuevo.png") no-repeat left top; }
+  .bt__jugar-de-nuevo:hover {
+    background: url("../images/jugar_de_nuevo_rollover.png") no-repeat left top; }
+
+.bt__siguiente-actividad {
+  background: url("../images/siguiente_actividad.png") no-repeat left top; }
+  .bt__siguiente-actividad:hover {
+    background: url("../images/siguiente_actividad_rollover.png") no-repeat left top; }
+
+.concepto {
+  cursor: move; }
+
+#preguntas .conceptocss {
+  position: absolute;
+  width: 170px;
+  height: 60px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 30px; }
+
+.concepto1 {
+  left: 228px;
+  top: 195px; }
+
+.concepto2 {
+  left: 398px;
+  top: 247px; }
+
+.concepto3 {
+  left: 218px;
+  top: 290px; }
+
+.concepto4 {
+  left: 388px;
+  top: 350px; }
+
+.concepto5 {
+  left: 288px;
+  top: 418px; }
+
+#conceptos ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: center; }
+  #conceptos ul li {
+    position: absolute;
+    width: 115px;
+    height: 39px; }
+    #conceptos ul li:nth-child(1) {
+      left: 846px;
+      top: 216px; }
+    #conceptos ul li:nth-child(2) {
+      left: 733px;
+      top: 257px; }
+    #conceptos ul li:nth-child(3) {
+      left: 886px;
+      top: 290px; }
+    #conceptos ul li:nth-child(4) {
+      left: 747px;
+      top: 331px; }
+    #conceptos ul li:nth-child(5) {
+      left: 900px;
+      top: 371px; }
+
+.selected {
+  background: rgba(255, 200, 0, 0.6); }
+
+/*------------------- cinta de resultados --------------- */
+.circulo {
+  position: absolute;
+}
+.circulo.gano {
+  background: url('../images/bien.png') no-repeat left top scroll;
+  width: 57px;
+  height: 52px;
+}
+.circulo.perdio {
+  background: url('../images/mal.png') no-repeat left top scroll;
+  width: 46px;
+  height: 45px;
+}
+
+.c1 { left:173px; top:206px; }
+.c2 { left:574px; top:255px; }
+.c3 { left:167px; top:298px; }
+.c4 { left:568px; top:357px; }
+.c5 { left:234px; top:427px; }
+
+/************************** Resultados   ******************************* */
+.circle {
+  display: inline-block;
+  line-height: 1.2;
+  margin: 6px 6px 20px;
+  position: relative;
+  text-align: center;
+  width: 155px; }
+
+.circle strong {
+  font-size: 30px;
+  font-weight: 900;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%; }
+/*# sourceMappingURL=estilos_relacionar.css.map */

@@ -1,0 +1,368 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  background: #4D5A64;
+  height: 100%; }
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300; }
+
+.container {
+  width: 1100px;
+  margin: 0 auto; }
+
+.encabezado {
+  height: 60px;
+  margin-top: 24px; }
+
+.encabezado__titulo {
+  float: left; }
+  .encabezado__titulo h1 {
+    font: 700 22px/1.4em "Lato", Helvetica, sans-serif;
+    letter-spacing: 3px;
+    margin: 0px;
+    color: #f2f2f2; }
+
+.encabezado__audio {
+  float: right; }
+  .encabezado__audio span {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 2px; }
+
+#bt_inicio {
+  position: absolute;
+  width: 105px;
+  height: 52px;
+  left: 15px;
+  top: 51px;
+  background: url("../images/bt_inicio.png") no-repeat top left transparent;
+  z-index: 9999; }
+
+#bt_inicio:hover {
+  background: url("../images/bt_inicio_hover.png") no-repeat top left transparent !important;
+  cursor: pointer; }
+
+/*-------- toogle --------*/
+.toogle-container {
+  display: inline-block;
+  height: 70px;
+  width: 105px;
+  position: relative;
+  top: 12px; }
+
+.toggle {
+  height: 30px;
+  margin: 5px auto;
+  width: 70px; }
+
+.toggle-on.active {
+  text-indent: 16px !important; }
+
+.toggle-off.active {
+  text-indent: 27px !important; }
+
+/*------- Contenedor --------*/
+#contenedor {
+  width: 1100px;
+  height: 700px;
+  border: 4px solid #444;
+  margin: 20px auto;
+  background: url("../images/fondo.jpg") no-repeat top left scroll #ccc;
+  overflow: hidden;
+  position: relative; }
+
+/*------- Preguntas ---------*/
+#preguntas {
+  position: relative;
+  width: 1100px;
+  height: 700px; }
+
+.opcion {
+  display: none; }
+
+.question {
+  width: 367px;
+  height: 188px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 192px;
+  top: 196px; }
+  .question p {
+    padding: 0px 12px;
+    margin: 0px 0 0;
+    font: bold 24px/1.2em Helvetica,Arial, sans-serif;
+    text-align: center;
+    color: #f2f2f2; }
+
+.respuesta {
+  position: absolute;
+  width: 381px;
+  height: 105px;
+  left: 665px;
+  background: #fff;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border: 2px solid #fff; }
+  .respuesta:hover {
+    cursor: pointer;
+    border: 2px solid #D0E8E5; }
+  .respuesta p {
+    font: 400 16px/1.2em 'Lato',sans-serif;
+    color: #444;
+    padding: 0px 24px; }
+    .respuesta p span {
+      font-weight: bold;
+      padding-right: 4px; }
+
+.respuesta.uno {
+  top: 170px; }
+
+.respuesta.dos {
+  top: 291px; }
+
+.respuesta.tres {
+  top: 415px; }
+
+.respuesta.cuatro {
+  top: 537px; }
+
+.buena {
+  background-color: #31b744;
+  border-color: #258933 !important; }
+  .buena p, .buena p span {
+    color: #fff; }
+
+.mala {
+  background-color: #c83818;
+  border-color: #972a13 !important; }
+  .mala p, .mala p span {
+    color: #fff; }
+
+/* Cinta de numeros */
+.circulo {
+  position: absolute; }
+
+.circulo.gano {
+  background: url("../images/bien.png") no-repeat left top scroll;
+  width: 57px;
+  height: 52px; }
+
+.circulo.perdio {
+  background: url("../images/mal.png") no-repeat left top scroll;
+  width: 46px;
+  height: 45px; }
+
+.c0 {
+  left: 270px;
+  top: 426px; }
+
+.c1 {
+  left: 270px;
+  top: 488px; }
+
+.c2 {
+  left: 270px;
+  top: 551px; }
+
+.c3 {
+  left: 270px;
+  top: 617px; }
+
+.c4 {
+  left: 468px;
+  top: 485px; }
+
+.c5 {
+  left: 468px;
+  top: 547px; }
+
+.c6 {
+  left: 468px;
+  top: 610px; }
+
+/* Personaje */
+#personaje {
+  position: absolute;
+  left: 33px;
+  top: 147px;
+  height: 151px;
+  background-image: url("../images/sprite_caras.png");
+  background-repeat: no-repeat;
+  line-height: 151px;
+  width: 90px; }
+
+#personaje.default {
+  background-position: 90px 0; }
+
+#personaje.perdio {
+  background-position: -180px 0; }
+
+#personaje.gano {
+  background-position: -90px 0; }
+
+/* Resultados */
+.circle {
+  display: inline-block;
+  line-height: 1.2;
+  margin: 6px 6px 20px;
+  position: relative;
+  text-align: center;
+  width: 155px; }
+
+.circle strong {
+  font-size: 30px;
+  font-weight: 900;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%; }
+
+#resultados {
+  position: relative;
+  width: 1100px;
+  height: 700px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.estadistica {
+  width: 628px;
+  height: 496px;
+  background: url("../images/marco.png") center center no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #444; }
+
+.estadistica__puntaje {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px; }
+
+.estadistica__numero, .estadistica__porcentaje {
+  width: 110px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px; }
+
+.estadistica__flecha {
+  position: relative; }
+
+.estadistica__flecha:before {
+  content: "";
+  display: block;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 15px 0px 15px 15px;
+  border-color: transparent transparent transparent orange; }
+
+.estadistica__mensaje {
+  width: 65%; }
+
+.estadistica__mensaje p {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #444; }
+
+.estadistica__botones {
+  height: 100px;
+  width: 420px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.bt, .bt__jugar-de-nuevo, .bt__siguiente-actividad {
+  display: block;
+  width: 220px;
+  height: 82px;
+  cursor: pointer; }
+
+.bt__jugar-de-nuevo {
+  background: url("../images/jugar_de_nuevo.png") no-repeat left top; }
+
+.bt__jugar-de-nuevo:hover {
+  background: url("../images/jugar_de_nuevo_rollover.png") no-repeat left top; }
+
+.bt__siguiente-actividad {
+  background: url("../images/siguiente_actividad.png") no-repeat left top; }
+
+.bt__siguiente-actividad:hover {
+  background: url("../images/siguiente_actividad_rollover.png") no-repeat left top; }
+
+/* Clases Helper */
+.box_round {
+  border-radius: 12px; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+/*# sourceMappingURL=cuestionario.css.map */

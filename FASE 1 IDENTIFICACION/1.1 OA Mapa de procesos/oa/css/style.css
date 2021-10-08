@@ -1,0 +1,358 @@
+p {
+	font-family: Arial !important;
+	line-height: 18px;
+	font-size: 14px;
+}
+body {
+	background-image: url('../images/main-bg.svg');
+    background-color: #FFFFFF;
+    background-size: contain;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+.size-opacity, .arrow {
+	cursor: pointer;
+	transition:0.25s;
+}
+.size-opacity:hover, .arrow:hover {
+	opacity: 0.75;
+	padding: 10px;
+	margin: -10px !important;
+	/*z-index:999 !important;
+	border-radius: 50px;*/
+}
+.rotate360 {
+	cursor: pointer;
+	transition:0.25s;
+	transform: rotateZ(0deg) !important;
+}
+.rotate360:hover {
+	transform: rotateZ(-360deg) !important;
+	margin: -30px !important;
+	padding: 30px;
+	/*z-index:999 !important;
+	border-radius: 50px;*/
+}
+.zoom-slow {
+    cursor: zoom-in;
+    transition:0.25s !important;
+}
+.zoom-slow:hover {
+    transform: scale(1.7) !important;
+    background-color:white !important;
+    padding:2px !important;
+    z-index:999;
+}
+.lm, .zoomize, .nc1, .nc2, .nc3, .nc4, .nc5, .nc6, .nc7, .nc8, .nc9, .nc10 {
+	-webkit-cursor: pointer;
+	-moz-cursor: pointer;
+	-o-cursor: pointer;
+	-ms-cursor: pointer;
+	cursor: pointer;
+	-webkit-transition: 250ms;
+	-moz-transition: 250ms;
+	-o-transition: 250ms;
+	-ms-transition: 250ms;
+	transition: 250ms;
+	transform: rotateZ(0deg) !important;
+	-webkit-transform: rotateZ(0deg) !important;
+	-moz-transform: rotateZ(0deg) !important;
+	-o-transform: rotateZ(0deg) !important;
+	-ms-transform: rotateZ(0deg) !important;
+}
+.lm:hover {
+	transform: translateX(-9px) !important;
+	-webkit-transform: translateX(-9px) !important;
+	-moz-transform: translateX(-9px) !important;
+	-o-transform: translateX(-9px) !important;
+	-ms-transform: translateX(-9px) !important;
+}
+.nc1:hover {
+	background-image: url(../images/numeros-circulos_1-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc2:hover {
+	background-image: url(../images/numeros-circulos_2-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc3:hover {
+	background-image: url(../images/numeros-circulos_3-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc4:hover {
+	background-image: url(../images/numeros-circulos_4-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc5:hover {
+	background-image: url(../images/numeros-circulos_5-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc6:hover {
+	background-image: url(../images/numeros-circulos_6-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc7:hover {
+	background-image: url(../images/numeros-circulos_7-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc8:hover {
+	background-image: url(../images/numeros-circulos_8-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc9:hover {
+	background-image: url(../images/numeros-circulos_9-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.nc10:hover {
+	background-image: url(../images/numeros-circulos_10-a.svg) !important;
+	margin:-30px !important;
+	padding: 30px;
+	transform: rotateZ(360deg) !important;
+	-webkit-transform: rotateZ(360deg) !important;
+	-moz-transform: rotateZ(360deg) !important;
+	-o-transform: rotateZ(360deg) !important;
+	-ms-transform: rotateZ(360deg) !important;
+}
+.zoomize:hover {
+	padding: 30%;
+	margin: -30% !important;
+	z-index: 999 !important;
+}
+.opciones-buts {
+	cursor: pointer;
+	transition: 0.25s;
+}
+.opciones-buts:hover {
+	padding: 35%;
+	margin: -35% !important;
+	opacity: 0.8;
+	z-index: 999;
+}
+.mapa-titulos {
+	cursor: pointer;
+	transition: 0.25s;
+}
+.mapa-titulos:hover {
+	transform: scale(2) rotateZ(-15deg) !important;
+}
+.playbut {
+	cursor: pointer !important;
+	transition: 0.5s !important;
+}
+.playbut:hover {
+	transform: scale(1.5) !important;
+	background-image: url("../images/btn_play-a.svg") !important;
+}
+.pause {
+	cursor: pointer;
+	transition: 0.5s;
+}
+.pause:hover {
+	transform: scale(1.5) !important;
+	background-image: url("../images/btn_pause-a.svg") !important;
+}
+.stop {
+	cursor: pointer;
+	transition: 0.5s;
+}
+.stop:hover {
+	transform: scale(1.5) !important;
+	background-image: url("../images/btn_stop-a.svg") !important;
+}
+.arrow{}
+.smb {
+	cursor: pointer;
+	transition: 0.25s;
+}
+.smb:hover {
+	margin-top: 10px !important;
+}
+/*scroll bar*/
+::-webkit-scrollbar {
+      width: 13px;
+}
+::-webkit-scrollbar-track {
+      /* background-color: white; */
+      border: solid 1.5px;
+      border-radius:8px;
+} 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(152, 26, 30, 0.85);
+      border-radius: 8px;
+} 
+::-webkit-scrollbar-button {
+      background: #971A1E;
+      cursor: pointer !important;
+      display: none;
+}
+::-webkit-scrollbar-corner {
+      background-color: black;
+}
+/*2017*/
+.btn-intro, .mm-intro, .mm-funcional, .mm-mapa, .mm-identificar, .mm-caracterizar, .mm-elab, .funcional-v, .funcional-h, .sm-bloque, .sm-integrado, .sm-cadena, .sm-aleman, .bw, .fw {
+	transition: 0.25s ease-in;
+	cursor: pointer;
+}
+.btn-intro:hover {
+	background-image: url(../images/btn_intro-a.svg) !important;
+	margin:-30px !important;
+	padding:30px;
+	z-index: 999999 !important;
+}
+.mm-intro:hover {
+	background-image: url(../images/mm_intro-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+	z-index: 999999 !important;
+}
+.mm-funcional:hover {
+	background-image: url(../images/mm_funcional-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+	z-index: 999999 !important;
+}
+.mm-mapa:hover {
+	background-image: url(../images/mm_mapa-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+	z-index: 999999 !important;
+}
+.mm-identificar:hover {
+	background-image: url(../images/mm_identificar-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+	z-index: 999999 !important;
+}
+.mm-caracterizar:hover {
+	background-image: url(../images/mm_caracterizar-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+	z-index: 999999 !important;
+}
+.mm-elab:hover {
+	background-image: url(../images/mm_elab-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+	z-index: 999999 !important;
+}
+.funcional-v:hover {
+	background-image: url(../images/funcionnal-1-btn_vertical-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+}
+.funcional-h:hover {
+	background-image: url(../images/funcionnal-1-btn_horizontal-a.svg) !important;
+	margin:-20px !important;
+	padding: 20px;
+}
+.sm-bloque:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_bloques-a.svg) !important;
+}
+.sm-integrado:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_integrado-a.svg) !important;
+}
+.sm-cadena:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_cadena-a.svg) !important;
+}
+.sm-aleman:hover {
+	margin: -30px !important;
+	padding: 30px;
+	background-image: url(../images/identificar-sm_aleman-a.svg) !important;
+}
+.bw:hover {
+	margin: -10px !important;
+	padding: 10px;
+	background-image: url(../images/pagination_bw-a.svg) !important;
+}
+.fw:hover {
+	margin: -10px !important;
+	padding: 10px;
+	background-image: url(../images/pagination_fw-a.svg) !important;
+}
+/*opciones-menú*/
+.op-map, .op-ad, .op-glo, .op-bi, .op-pdf, .op-oa {
+	cursor: pointer;
+	transition: 0.25s linear;
+}
+.op-map:hover {
+	background-image: url(../images/opciones/opciones_mapa-a.svg) !important;
+}
+.op-ad:hover {
+	background-image: url(../images/opciones/opciones_ad-a.svg) !important;
+}
+.op-glo:hover {
+	background-image: url(../images/opciones/opciones_glosario-a.svg) !important;
+}
+.op-bi:hover {
+	background-image: url(../images/opciones/opciones_bibliografia-a.svg) !important;
+}
+.op-pdf:hover {
+	background-image: url(../images/opciones/opciones_pdf-a.svg) !important;
+}
+.op-oa:hover {
+	background-image: url(../images/opciones/opciones_oa-a.svg) !important;
+}
+.lista > ul > li {
+	list-style-type: lower-latin;
+}

@@ -1,0 +1,118 @@
+#Stage_mc_ops_oa_ops_zip_a{
+visibility: hidden;
+}
+
+.btn_ {transition: 0.25s;
+	transform: scale(1) !important;}
+.btn_:hover {transform: scale(1.15) !important;}
+
+.btnx {
+	transition: 0.1s;
+}
+.btnx:hover {
+	transform: translateX(8px) !important;
+	
+}
+
+.btnx2 {
+	transition: 0.1s;
+}
+.btnx2:hover {
+	transform: translateX(-8px) !important;
+	
+}
+}
+.menu {
+	z-index: 1;
+}
+
+.intro:hover { background-image:url(btn_intro-02.svg) !important;}
+   
+/*botones_ops*/
+.map:hover { background-image:url(ops_mapa_b.svg) !important;}
+.act:hover {background-image: url(ops_act_b.svg) !important;}
+.glos:hover {background-image: url(ops_glos_b.svg) !important;}
+.biblio:hover {background-image: url(ops_biblio_b.svg) !important;}
+.pdf:hover {background-image: url(ops_pdf_b.svg) !important;}
+.zip:hover {background-image: url(ops_zip_b.svg) !important;}
+.btn_rt:hover {background-image: url(ops_rtb.svg) !important;}
+
+
+.btn1:hover { background-image:url(bt1_b.svg) !important;}
+.btn2:hover {background-image: url(bt2_b.svg) !important;}
+.btn3:hover {background-image: url(bt3_b.svg) !important;}
+.btn4:hover {background-image: url(bt4_b.svg) !important;}
+.btn5:hover {background-image: url(bt5_b.svg) !important;}
+.btn6:hover {background-image: url(bt6_b.svg) !important;}
+.btns1:hover {background-image: url(bt_sub1_b.svg) !important;}
+.btns2:hover {background-image: url(bt_sub2_b.svg) !important;}
+.btns3:hover {background-image: url(bt_sub3_b.svg) !important;}
+.btns4:hover {background-image: url(bt_sub4_b.svg) !important;}
+.btns5:hover {background-image: url(bt_sub5_b.svg) !important;}
+.btns6:hover {background-image: url(bt_sub6_b.svg) !important;}
+.btns7:hover {background-image: url(bt_sub7_b.svg) !important;}
+.btns8:hover {background-image: url(bt_sub8_b.svg) !important;}
+.opc1:hover {background-image: url(opc1_b.svg)  !important;}
+.opc2:hover {background-image: url(opc2_b.svg)  !important;}
+.opc3:hover {background-image: url(opc3_b.svg)  !important;}
+.opc4:hover {background-image: url(opc4_b.svg)  !important;}
+.opc5:hover {background-image: url(opc5_b.svg)  !important;}
+.opc6:hover {background-image: url(opc6_b.svg)  !important;}
+.opc10:hover {background-image: url(opc6_b.svg)  !important;}
+.opc11:hover {background-image: url(opc6_b.svg)  !important;}
+.opc12:hover {background-image: url(opc6_b.svg)  !important;}
+
+
+.btn_ant:hover {background-image: url(bt_anterior_b.svg) !important;}
+.btn_sig:hover {background-image: url(bt_siguiente_b.svg) !important;}
+
+.btn_inicio:hover {
+	background-image: url(bt_inicio_b.svg) !important;
+	transform: scale(1.1) !important;
+	-webkit-transform-: scale(1.1) !important;
+}
+
+.btn_cerrar:hover {
+	background-image: url(bt_cerrar_b.svg) !important;
+	transform: scale(1.1) !important;
+	-webkit-transform-: scale(1.1) !important;
+}
+
+.p1 {
+  background-image:url(bt1.svg);
+  -webkit-transform-: scale(1.3) !important;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+
+.texto14 { font-size:24px
+ }
+
+}
+
+/*Viñeta*/
+ul { list-style-image:url(img_lista.svg);
+height:auto;}
+
+/*Tabla*/
+table {
+    border-collapse: collapse;
+	width: 100%;
+	background:#FFFFFF;
+}
+
+th, td {
+	border: 1px solid #E3E1E1;
+	padding: 5px 8px;
+}
+
+tr:nth-child(odd){background-color: #f2f2f2}
+
+th {
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background-color: #a35f31;
+}
+

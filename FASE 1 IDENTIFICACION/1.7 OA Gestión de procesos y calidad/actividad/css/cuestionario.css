@@ -1,0 +1,378 @@
+* {
+  box-sizing: border-box;
+}
+html {
+background: #fff;
+height: 100%;
+}
+
+body {
+  /*background: #04AD36;*/
+  font-family: 'helvetica', sans-serif;
+}
+
+/**********************************************************/
+.box_round {
+  -webkit-border-radius: 12px; /* Safari 3-4, iOS 1-3.2, Android ≤1.6 */
+          border-radius: 12px; /* Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+ */
+
+  /* useful if you don't want a bg color from leaking outside the border: */
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+/**********************************************************/
+.clear { clear: both;}
+
+.container {
+  width: 1100px;
+  margin: 0 auto; }
+
+.encabezado {
+  height: 60px;
+  margin-top: 24px; }
+
+.encabezado__titulo {
+  float: left; }
+  .encabezado__titulo h1 {
+    font: 700 22px/1.4em Helvetica, sans-serif;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    color: #333; }
+
+.encabezado__audio {
+  float: right; }
+  .encabezado__audio span {
+    font-size: 14px;
+    color: #333;
+    font-weight: 300;
+    letter-spacing: 2px; }
+
+.toogle-container {
+  display: inline-block;
+  height: 70px;
+  width: 105px;
+  position: relative;
+  top: 12px;
+}
+
+  .right span {
+      font-size: 14px;
+      color:#fff;
+  }
+
+.toggle {
+  height: 30px;
+  margin: 5px auto;
+  width: 70px;
+}
+.toggle-on.active {
+  text-indent: 16px !important;
+}
+.toggle-off.active {
+  text-indent: 27px !important;
+}
+
+
+h1 {
+font: 900 24px/1.4em 'helvetica', sans-serif;
+margin:0px;
+color:#BA1A1A;
+}
+
+#instrucciones {
+  position: absolute;
+  left:490px;
+  top:175px;
+  width: 569px;
+  height: 80px;
+  background: url("../images/instrucciones.png");
+}
+#linea {
+  background: url("../images/linea2.png") top left no-repeat;
+  position: absolute;
+  left: 723px;
+  top: 271px;
+  width: 4px;
+  height: 331px;
+}
+
+#contenedor { width: 1100px; height: 620px; border:0px solid #595455; margin: 20px auto; background: url('../images/fondo_actividad.jpg') no-repeat top left scroll #ccc; overflow:hidden; position:relative; }
+
+#preguntas {position: relative;width:1100px; height:620px;}
+
+  /*****************************/
+  .question {
+      width: 315px;
+      height: 120px;
+      position: absolute;
+      left: 375px;
+      top: 368px;
+      z-index: 8;
+  }
+    .question p { color:#51564d; font:400 18px/1.3em 'helvetica', sans-serif; text-align: justify; margin:0; }
+
+.respuesta {
+  position: absolute;
+  width: 320px;
+  height: 45px;
+  border-right: 12px solid red;
+  left: 727px;
+  background: #4E564A;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  }
+  .respuesta:hover {
+    cursor: pointer;
+ }
+  .respuesta p {
+    font: 400 16px/1.2em 'Helvetica',Arial,sans-serif;
+    color: #FCEDC9;
+    padding: 0px;
+    margin: 0px;
+  }
+  .respuesta p span {
+      font-weight: bold;
+      padding: 0px 12px;
+      display: inline-block;
+      line-height: 45px;
+      margin-right: 7px;
+  }
+
+.respuesta.uno {
+  top: 291px;
+  border-color: #FF6681 !important; }
+  .respuesta.uno p span {
+    background: #FF6681 !important;
+  }
+  .respuesta.uno:hover {
+    background: #DE4F64;
+  }
+.respuesta.dos {
+  top: 353px;
+  border-color: #FF9836; }
+  .respuesta.dos p span {
+    background: #FF9836;
+  }
+  .respuesta.dos:hover {
+    background: #F1852C;
+  }
+.respuesta.tres {
+  top: 413px;
+  border-color: #009E53; }
+  .respuesta.tres p span {
+    background: #009E53;
+  }
+  .respuesta.tres:hover {
+    background: #008747;
+  }
+.respuesta.cuatro {
+  top: 474px;
+  border-color: #00A9B1; }
+  .respuesta.cuatro p span {
+    background: #00A9B1;
+  }
+  .respuesta.cuatro:hover{
+    background: #008D97;
+  }
+.respuesta.cinco {
+  top: 535px;
+  border-color: #BF5BBF; }
+  .respuesta.cinco p span {
+    background: #BF5BBF;
+  }
+  .respuesta.cinco:hover {
+    background: #A04DA3;
+  }
+
+
+.buena {
+  background-color: #31b744;
+  border-color: #258933 !important; }
+  .buena p, .buena p span {
+    color: #fff; }
+
+.mala {
+  background-color: #c83818;
+  border-color: #972a13 !important; }
+  .mala p, .mala p span {
+    color: #fff; }
+
+
+  #nropregunta {
+    font:normal 20px/1.2 arial,'sans-serif';
+    position: absolute;
+    width: 232px;
+    left: 457px;
+    top: 324px;
+    color:#51564d;
+    text-align: right;
+  }
+
+  /****************************/
+
+  #cinta { }
+
+#cuerpo {
+  background: url('../images/profe_cuerpo.png') top left no-repeat;
+  width: 229px;
+  height: 608px;
+  position: absolute;
+  left: 859px;
+  top: 293px;
+  z-index: 90;
+}
+
+#personaje_cuerpo {
+  position: absolute;
+  width: 412px;
+  height: 388px;
+  left: 17px;
+  top: 232px;
+  background: url('../images/cuerpo_personaje.png') top left no-repeat;
+}
+
+#personaje_cara {
+  position:absolute; left: 110px; top: 122px;
+  height: 156px;
+  background-image: url("../images/sprite_caras.png");
+  background-repeat: no-repeat;
+  line-height: 156px;
+  width: 108px;
+  z-index: 92;
+}
+
+#personaje_cara.normal {
+  background-position: 0 0;
+}
+
+#personaje_cara.perdio {
+  background-position: -216px 0;
+}
+
+#personaje_cara.gano {
+  background-position: -108px 0;
+}
+
+
+/*=================  Posicionar Cinta de Números ===================*/
+.circulo {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  font-weight: 300;
+  line-height: 43px;
+  text-align: center;
+  top:530px;
+  /*cursor: pointer;*/
+  font-size: 20px;
+  color: #FCECCB;
+}
+
+.circulo.normal {
+  background: url('../images/bt_pregunta.png') no-repeat left top scroll;
+}
+
+.circulo.gano {
+  background: url('../images/bt_bien.png') no-repeat left top scroll;
+  text-indent: 2000px;
+}
+.circulo.perdio {
+  background: url('../images/bt_mal.png') no-repeat left top scroll;
+  text-indent: 2000px;
+}
+
+.c0 { left: 398px; }
+.c1 { left: 452px; }
+.c2 { left: 508px; }
+.c3 { left: 562px; }
+.c4 { left: 617px; }
+
+
+/************************** Resultados   ********************************/
+
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 490px;
+  top: 248px;
+  color: #fff;
+}
+
+.circle strong {
+  font-size: 30px;
+  font-weight: 900;
+  left: 24px;
+  line-height: 85px;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  width: 100%;
+}
+
+#resultados {
+  position: relative;
+  width: 1100px;
+  height: 700px;
+  z-index: 100;
+  /*background: rgba(0, 0, 0, 0.6);*/
+}
+
+.estadistica {
+  width: 662px;
+  height: 331px;
+  background: url("../images/fondo_resultados.png") center center no-repeat;
+  position: absolute;
+  left: 438px;
+  top: 231px;
+}
+
+.estadistica__numero {
+  position: absolute;
+  width: 109px;
+  height: 37px;
+  line-height: 37px;
+  left: 505px;
+  top:420px;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #51564d;
+}
+
+.estadistica__mensaje {
+  position: absolute;
+  width: 225px;
+  height: 63px;
+  left: 448px;
+  top: 482px;
+}
+
+.estadistica__mensaje p {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0px;
+  padding: 12px 0px 0px;
+  color: #51564d;
+  margin: 0px;}
+
+  p.nopadding {
+    padding-top: 0px;
+  }
+
+.bt__jugar-de-nuevo {
+  position: absolute;
+  width: 205px;
+  height: 50px;
+  left: 814px;
+  top: 482px;
+  cursor: pointer;
+}
+
+.bt__jugar-de-nuevo {
+  background: url("../images/bt_volver.png") no-repeat left top; }
+  .bt__jugar-de-nuevo:hover {background: url("../images/bt_volver_hover.png") no-repeat left top; }

@@ -1,0 +1,333 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  background: #eee;
+  height: 100%; }
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400; }
+
+.container {
+  width: 1105px;
+  margin: 0 auto; }
+
+.encabezado {
+  height: 60px;
+  margin-top: 24px; }
+
+.encabezado__titulo {
+  float: left; }
+  .encabezado__titulo h1 {
+    font: 700 22px/1.4em "Lato", Helvetica, sans-serif;
+    letter-spacing: 3px;
+    margin: 0px;
+    color: #2A4690; }
+
+.encabezado__audio {
+  float: right; }
+  .encabezado__audio span {
+    font-size: 14px;
+    color: #2A4690;
+    font-weight: 300;
+    letter-spacing: 2px; }
+
+/*-------- toogle --------*/
+.toogle-container {
+  display: inline-block;
+  height: 70px;
+  width: 105px;
+  position: relative;
+  top: 12px; }
+
+.toggle {
+  height: 30px;
+  margin: 5px auto;
+  width: 70px; }
+
+.toggle-on.active {
+  text-indent: 16px !important; }
+
+.toggle-off.active {
+  text-indent: 27px !important; }
+
+#contenedor {
+  width: 1105px;
+  height: 712px;
+  border: 0px solid #444;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#portada {
+  width: 1099px;
+  height: 710px;
+  position: relative;
+  background: url('../images/portada.png') top left no-repeat;
+}
+
+#portada .btn_iniciar {
+  position: absolute;
+  left:579px;
+  top:557px;
+  width: 179px;
+  height: 28px;
+  background: url('../images/boton-actividad.png') top left no-repeat;
+}
+  #portada .btn_iniciar:hover {
+    cursor: pointer;
+    background: url('../images/boton-actividad1.png') top left no-repeat;
+  }
+
+#preguntas_1 {
+  display: none;
+  background: url("../images/background-tema-a.png") no-repeat top left scroll #ccc;
+  position: relative;
+  width: 1105px;
+  height: 712px; }
+
+.respuesta_a  {
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  background: url("../images/cuadro-actividad-a.png") center center no-repeat transparent;
+  transition: all 0.5s ease;
+}
+  .respuesta_a:hover{
+    cursor: pointer;
+    background-color: #FECD0B;
+  }
+
+  .respuesta_a.buena {
+    background-color: green;
+  }
+
+  .respuesta_a.mala {
+    background-color: red;
+  }
+
+.r11 { left: 646px; top: 332px; }
+.r12 { left: 854px; top: 332px; }
+
+.r21 { left: 646px; top: 385px; }
+.r22 { left: 854px; top: 385px; }
+
+.r31 { left: 646px; top: 438px; }
+.r32 { left: 854px; top: 438px; }
+
+.r41 { left: 646px; top: 502px; }
+.r42 { left: 854px; top: 502px; }
+
+.r51 { left: 646px; top: 578px; }
+.r52 { left: 854px; top: 578px; }
+
+#preguntas_2 {
+  display: none;
+  background: url("../images/backgroun-tema-b.png") no-repeat top left scroll #ccc;
+  position: relative;
+  width: 1104px;
+  height: 712px; }
+
+.respuesta_b {
+  position: absolute;
+  width: 156px;
+  height: 32px;
+}
+  .respuesta_b:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+
+.rb1.positivo {
+  position: absolute;
+  width: 28px;
+  height: 43px;
+  left: 474px;
+  top:289px;
+  background: url('../images/positivo.png') top left no-repeat;
+}
+.rb2.positivo {
+  position: absolute;
+  width: 28px;
+  height: 43px;
+  left: 451px;
+  top:395px;
+  background: url('../images/positivo.png') top left no-repeat;
+}
+.rb3.positivo {
+  position: absolute;
+  width: 28px;
+  height: 43px;
+  left: 451px;
+  top: 500px;
+  background: url('../images/positivo.png') top left no-repeat;
+}
+
+.rb1.negativo {
+  position: absolute;
+  width: 26px;
+  height: 31px;
+  left: 475px;
+  top:300px;
+  background: url('../images/negativo.png') top left no-repeat;
+}
+.rb2.negativo {
+  position: absolute;
+  width: 26px;
+  height: 31px;
+  left: 453px;
+  top: 407px;
+  background: url('../images/negativo.png') top left no-repeat;
+}
+.rb3.negativo {
+  position: absolute;
+  width: 26px;
+  height: 31px;
+  left: 453px;
+  top: 512px;
+  background: url('../images/negativo.png') top left no-repeat;
+}
+
+.respuesta_b.uno-p { left: 190px; top:348px; background: url('../images/r-1-p.png') top left no-repeat; }
+.respuesta_b.dos-p { left: 387px; top:348px; background: url('../images/r-2-p.png') top left no-repeat; }
+.respuesta_b.tres-p { left: 582px; top:348px; background: url('../images/r-3-p.png') top left no-repeat; }
+.respuesta_b.cuatro-p { left: 774px; top:348px; background: url('../images/r-4-p.png') top left no-repeat; }
+
+.b21.uno { left: 190px; top:454px; background: url('../images/r-1-s.png') top left no-repeat; }
+.b22.dos { left: 387px; top:454px; background: url('../images/r-2-s.png') top left no-repeat; }
+.b23.tres { left: 582px; top:454px; background: url('../images/r-3-s.png') top left no-repeat; }
+.b24.cuatro { left: 774px; top:454px; background: url('../images/r-4-s.png') top left no-repeat; }
+
+.b31.uno { left: 190px; top:583px; background: url('../images/r-1-s.png') top left no-repeat; }
+.b32.dos { left: 387px; top:583px; background: url('../images/r-2-s.png') top left no-repeat; }
+.b33.tres { left: 582px; top:583px; background: url('../images/r-3-s.png') top left no-repeat; }
+.b34.cuatro { left: 774px; top:583px; background: url('../images/r-4-s.png') top left no-repeat; }
+
+#preguntas_3 {
+  display: none;
+  background: url("../images/background-tema-c.png") no-repeat top left scroll #ccc;
+  position: relative;
+  width: 1105px;
+  height: 712px; }
+
+.respuesta_c {
+  position: absolute;
+  height: 33px;
+}
+  .respuesta_c:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+.c11 { left: 336px; top:389px; width: 453px; background: url('../images/ca.png') top left no-repeat; }
+.c12 { left: 250px; top:434px; width: 630px; background: url('../images/cb.png') top left no-repeat; }
+.c13 { left: 361px; top:483px; width: 409px; background: url('../images/cc.png') top left no-repeat; }
+.c14 { left: 415px; top:537px; width: 295px; background: url('../images/cd.png') top left no-repeat; }
+
+.cbuena {
+}
+  .cbuena:before {
+    content: "";
+    display: block;
+    background: url("../images/positivo.png") left top no-repeat;
+    width: 28px;
+    height: 43px;
+    position: absolute;
+    left: 4px;
+    top: 0px; }
+
+.cmala {
+}
+  .cmala:before {
+    content: "";
+    display: block;
+    background: url("../images/negativo.png") left top no-repeat;
+    width: 26px;
+    height: 31px;
+    position: absolute;
+    left: 4px;
+    top: 0px; }
+
+#resultados {
+  position: relative;
+  width: 1104px;
+  height: 712px;
+  background: url('../images/background-puntaje.png') top left no-repeat;
+}
+
+.estadistica {
+  position: absolute;
+  left: 324px;
+  top: 389px;
+  width: 470px;
+  height: 210px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000; }
+
+
+  .estadistica__puntaje {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100px; }
+
+  .estadistica__numero, .estadistica__porcentaje {
+    width: 110px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px; }
+
+  .estadistica__flecha {
+    position: relative; }
+
+  .estadistica__flecha:before {
+    content: "";
+    display: block;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 15px 0px 15px 15px;
+    border-color: transparent transparent transparent orange; }
+
+  .estadistica__mensaje {
+    width: 65%; }
+
+  .estadistica__mensaje p {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #000; }
+
+  .estadistica__botones {
+    height: 100px;
+    width: 420px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+  .bt, .bt__jugar-de-nuevo {
+    display: block;
+    width: 180px;
+    height: 29px;
+    cursor: pointer; }
+
+  .bt__jugar-de-nuevo {
+    background: url("../images/boton-volverintentar.png") no-repeat left top; }
+
+  .bt__jugar-de-nuevo:hover {
+    background: url("../images/boton-volverintentar1.png") no-repeat left top; }

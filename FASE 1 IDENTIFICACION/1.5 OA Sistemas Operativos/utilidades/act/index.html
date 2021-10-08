@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+	  	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	       More info: h5bp.com/i/378 -->
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	  	<title>OA SISTEMAS OPERATIVOS.</title>
+	  	<meta name="description" content="Actividad de afianzamiento SENA">
+
+	  	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	  	<meta name="viewport" content="width=device-width">	
+
+	  	<script src="js/jquery-1.9.1.js"></script>
+	  	<script src="js/jquery-ui.js"></script>
+        <script src="js/plugins.js"></script>	  	
+        <link rel="stylesheet" href="js/toogle/css/toggles.css">
+        <link rel="stylesheet" href="js/toogle/css/themes/toggles-light.css">
+        <script src="js/toogle/toggles.min.js" type="text/javascript"></script>
+	  	<style>
+	  	* {
+	  		box-sizing: border-box;
+	  	}
+	  	html {
+			background: #FFF; 		
+			height: 100%;	 		
+	  	}
+
+		body {
+		    /*background: #04AD36;*/
+		    font-family: 'Helvetica', sans-serif;
+		}
+
+		/**********************************************************/
+		.box_round {
+		  -webkit-border-radius: 12px; /* Safari 3-4, iOS 1-3.2, Android ≤1.6 */
+		          border-radius: 12px; /* Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+ */
+
+		  /* useful if you don't want a bg color from leaking outside the border: */
+		  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+		}			
+		/**********************************************************/
+		.clear { clear: both;}
+
+		.toogle-container {
+		    display: inline-block;
+		    height: 70px;
+		    width: 105px;
+		    position: relative;
+		    top: 12px;
+		}       
+
+		    .right span {
+		        font-size: 14px;
+		        color:#fff;
+		    }
+
+		.toggle {
+		    height: 30px;
+		    margin: 5px auto;
+		    width: 70px;
+		}
+		  .toggle-on.active {
+		    text-indent: 16px !important;
+		  }
+		  .toggle-off.active {
+		    text-indent: 27px !important;
+		  } 
+
+
+		h1 {
+			font: 900 24px/1.4em 'Helvetica', sans-serif;
+			margin:0px;
+			color:#F4941B;
+		}
+
+		#instrucciones {
+			position: absolute;
+			left:560px;
+			top:30px;
+			width: 486px;	
+		}
+
+		#instrucciones p {
+			font: 300 16px/1.4em 'Helvetica', sans-serif;
+			margin:0px;
+		}
+
+		#contenedor { width: 1087px; height: 544px; border:0px solid #410000; margin: 20px auto;overflow:hidden; position:relative; 
+			  background-color: #ccc;
+			  background-image: -webkit-linear-gradient(top, #ccc, #8a798a); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+			  background-image:         linear-gradient(to bottom, #ccc, #8a798a); /* Chrome 26, Firefox 16+, IE 10+, Opera */			
+		}
+
+			#preguntas {position: relative;width:1100px; height:591px;}
+
+				/*****************************/
+				.question {
+				    background: transparent repeat scroll 0 0;
+				    border-radius: 8px;
+				    height: 90px;
+				    left: 635px;
+				    padding: 8px;
+				    position: absolute;
+				    top: 142px;
+				    width: 440px;
+				    z-index: 8;
+				}
+					.question p { padding: 0px 12px; color:#0E0400; font:400 18px/1.1em 'Helvetica', sans-serif; text-align: left; margin:0px 0 0; letter-spacing: 1px;}
+					.question p.small { /*font-size: 20px !important;*/}
+
+				.respuesta {position:absolute; width:370px; height:40px; 
+				    border:2px #6F5A37 solid;
+					background-color:#fff;
+					border-radius: 8px;
+
+					  /* useful if you don't want a bg color from leaking outside the border: */
+					  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;					
+				}
+					.respuesta p { padding:0px 12px; margin:0; color:#454545; font:normal 15px/1.1em 'Helvetica', sans-serif; font-weight: 400;}
+
+					.respuesta p.small { font-size: 12px;}
+
+					.respuesta p span {
+					    /*background: #f8f09b none repeat scroll 0 0;
+					    border-radius: 50%;*/
+					    display: inline-block;
+					    font-weight: bold;
+					    height: 24px;
+					    line-height: 24px;
+					    text-align: center;
+					    width: 24px;
+					    color:#00364C;
+					}		
+						
+					/*.respuesta:hover { background: url('images/respuesta-hover.png') top left scroll transparent no-repeat; cursor:pointer; }	*/	
+					.respuesta:hover { cursor:pointer; border-color:#D07F50; }
+
+				.uno { top:245px; left:640px;}
+				.dos { top:297px; left:640px;}
+				.tres { top:350px; left:640px;}
+				.cuatro { top:400px; left:640px;}
+
+				.buena { 
+				  background-color:  #31b744;
+				  border-color:#258933 !important;
+				}
+					.buena p, .buena p span { color:#fff;}
+				.mala { 
+				  background-color: #c83818;
+				  border-color:#972a13 !important;				
+				}
+					.mala p,.mala p span { color:#fff;}
+
+								
+				/****************************/
+
+				#cinta { }
+
+
+				/*#avioneta { position:absolute; width:806px; height:76px; top:0; left:-808px; background:url('images/avioneta.png') top left scroll transparent no-repeat;}*/
+
+			#resultados { position:relative; width:1100px; height:600px; color:#000059; background: rgba(0,0,0,0.5); }
+			#resultados .btn-volver-comenzar {width:221px; height:52px; z-index: 9; background: url('images/btnvolver.png') no-repeat top left scroll transparent; position:absolute; left:234px; top:205px;}
+
+				.btnVolverComenzarHover {background: url('images/btnvolver_hover.png') !important; cursor:pointer;}		
+
+				#mensaje {padding-top: 0px; padding-right: 0px; padding-bottom: 0px; font-family: 'Helvetica',sans-serif; font-size: 20px; line-height: 1.2em; clear: both; color: red;}
+
+						
+				#desempenio.bajo { width:693px; height:248px; position:absolute; left:20%; top:150px; background:url('images/marco_resultados-01.png') top left scroll no-repeat transparent !important; }
+					#desempenio.bajo .msj { color:red !important;}
+				#desempenio.basico { width:693px; height:248px; position:absolute; left:20%; top:150px; background:url('images/marco_resultados-01.png') top left scroll no-repeat transparent !important; }
+					#desempenio.basico .msj { color:#000059 !important;}
+				/*#desempenio .alto { width:693px; height:395px; position:absolute; top:113px; left:157px; }*/
+				#desempenio.superior { width:577px; height:259px; position:absolute; left:27%; top:150px; background:url('images/marco_muy_bien-01.png') top left scroll no-repeat transparent !important; }
+				
+					#desempenio.superior .btn-volver-comenzar {left:174px; top:205px;}
+
+					#desempenio.superior .msj {text-align: center; width: 345px; margin: 0px auto; color:#000059 !important;}
+
+				#desempenio .wrap {padding:65px 36px 36px 36px; font:bold 24px helvetica,arial; text-align: center;}
+			
+
+
+
+			#guia {
+				position:absolute; left: 181px; top: 162px; 
+				height: 231px;
+				background-image: url("images/ad_circle_so.png");
+				background-repeat: no-repeat;
+				line-height: 231px;
+				width: 231px; 
+			}
+
+			#guia.apuntando {				
+				background-image: url("images/ad_circle_so.png");
+			}
+
+			#guia.perdio {
+				background-image: url("images/ad_circle_error.png");
+			}
+
+			#guia.gano {
+				background-image: url("images/ad_circle_ok.png");
+			}
+
+		/*=================  Posicionar Cinta de Números ===================*/
+		.circulo {
+		  position: absolute;
+		  z-index: 999;
+		  width: 80px;
+		  height: 61px;  
+		}
+
+		.c0 { left:190px; top:44px; background: url('images/numeros_azules/ad_1a.png') center center no-repeat; }
+		.c1 { left:330px; top:44px; background: url('images/numeros_azules/ad_2a.png') center center no-repeat; }
+		.c2 { left:435px; top:133px; background: url('images/numeros_azules/ad_3a.png') center center no-repeat; }
+		.c3 { left:461px; top:269px; background: url('images/numeros_azules/ad_4a.png') center center no-repeat; }
+		.c4 { left:389px; top:393px; background: url('images/numeros_azules/ad_5a.png') center center no-repeat; }
+		.c5 { left:257px; top:433px; background: url('images/numeros_azules/ad_6a.png') center center no-repeat; }
+		.c6 { left:122px; top:393px; background: url('images/numeros_azules/ad_7a.png') center center no-repeat; }
+		.c7 { left:56px; top:269px; background: url('images/numeros_azules/ad_8a.png') center center no-repeat; }
+		.c8 { left:81px; top:133px; background: url('images/numeros_azules/ad_9a.png') center center no-repeat; }
+
+
+		.circulo:hover {
+		  /*background: #29A9E1;
+		  color:#fff;*/
+		}
+		.circulo.actual {
+		  /*background-color: #ffdf00;
+		  border:0px solid #000;
+		  color: #000;
+		  font-weight: 900;*/
+		}
+		.circulo.gano {
+			background: url('images/ad_ok.png') center center no-repeat !important; 
+		}
+		.circulo.perdio {
+		  background: url('images/ad_error.png') center center no-repeat !important;    
+		}
+		.circle {
+		    display: inline-block;
+		    line-height: 1.2;
+		    margin: 6px 6px 20px;
+		    position: relative;
+		    text-align: center;
+		    width: 100px;
+		}
+
+		.circle strong {
+		    font-size: 30px;
+		    font-weight: 900;
+		    left: 24px;
+		    line-height: 85px;
+		    position: absolute;
+		    text-align: center;
+		    top: 30px;
+		    width: 100%;
+		}
+	  	</style>
+
+	  	<script>	 
+ 	
+		  	var pos=0;
+
+		  	var conaudio=1;
+		  	var aleluya=0;
+
+		  	var preguntas = new Array();
+		  	var aciertos = new Array();
+		  	var errores = new Array();
+		  	var listado = new Array(1,2,3,4,5,6,7,8,9);
+		  	var Total = listado.length;
+
+			var fraccion = (1/Total)*100;
+			var fraccion_global = 0;
+
+		  	var puestos = new Array('uno','dos','tres');
+		  	var letras = {'uno':'A','dos':'B','tres':'C'};
+
+
+	  		$(function() {	 
+
+	  			$('#resultados').hide();
+	  			//$('#preguntas').hide();
+	  			$('#bienvenida').hide();
+	  			$('#contenedor').trigger('click');
+
+
+	  			$('#contenedor').on('click','.btn-volver-comenzar',function(){
+	  				location.reload();
+	  			})
+
+  				$('#preguntas').fadeIn();
+
+				$('.toggle').toggles({
+					drag: true, // allow dragging the toggle between positions
+					click: true, // allow clicking on the toggle
+					text: {
+					  on: 'SI', // text for the ON position
+					  off: 'NO' // and off
+					},
+					'on': true,
+				});
+
+				$('.toggle').on('toggle', function (e, active) {
+					if (active) {
+					  conaudio=1;
+					} else {
+					  conaudio=2;
+					}
+				});
+
+			
+  				/**************************/
+				for(i=0; i<Total; i++) {
+					aleatorio = Math.floor(Math.random()*(listado.length));
+					seleccion = listado[aleatorio];
+					preguntas.push(seleccion);
+					listado.splice(aleatorio, 1);
+				}
+
+				for(i=1; i<=Total; i++) {
+					aux = [];
+					puestos = ['uno','dos','tres'];
+
+					for(j=0;j<4;j++) {
+						aleatorio = Math.floor(Math.random()*(puestos.length));
+						seleccion = puestos[aleatorio];
+						aux.push(seleccion);
+						puestos.splice(aleatorio, 1);
+					}	
+
+					var posicion=0;
+					if(!$('#p'+i+' .opciones').hasClass('norandom')) {
+						$('#p'+i+' .opciones div').each(function() {
+							$(this).addClass(aux[posicion]);
+							$(this).find('span').html(letras[aux[posicion]]);
+							posicion++;
+						})
+					}
+				}			
+				/**************************/
+
+
+				$('.question').each(function(i) {
+					var wh = $(this).height();
+					var ih = $('p', this).height();
+
+					if (wh > ih) {
+						$('p', this).css('margin-top', (wh-ih)/2 + 'px');
+					} else {
+						$('p', this).css('margin-top',0);
+					}
+				}); 
+
+				$('.respuesta').each(function(i) {
+					var wh = $(this).height();
+					var ih = $('p', this).height();
+
+					if (wh > ih) {
+						$('p', this).css('margin-top', (wh-ih)/2 + 'px');
+					} else {
+						$('p', this).css('margin-top',0);
+					}
+				}); 
+
+		  		$('.opcion').hide();
+			  	$('#p'+preguntas[pos]).fadeIn();	  
+			  	$('.c'+pos).addClass('actual');				
+			  	//$('.c'+pos).css('background-image','url("images/avion_volando.png")');
+
+			  	$('.respuesta').bind('click',verificar_respuesta);		
+
+	  			///////////////////////////////////////////////////////
+	  		})
+
+		/*********** click a respuesta *********/
+		var verificar_respuesta = function(){
+
+			$('audio')[0].pause();
+			$('audio')[0].load();	
+
+			var ok=0;
+			$('.circulo').removeClass('c_actual');
+			$('.c'+pos).removeClass('normal');
+
+			if($(this).hasClass('true')) {
+				$(this).addClass('buena');
+				aciertos.push(pos);
+				$('#guia').removeClass('apuntando').removeClass('perdio').addClass('gano');
+				$('.c'+pos).addClass('gano');
+				if(aleluya>2) {
+					if(conaudio<2) $('audio')[1].play();
+				}else {
+					if(conaudio<2) $('audio')[1].play();
+				}
+				aleluya=0;				
+				ok=1;
+			}else {
+				$(this).addClass('mala');
+				errores.push(pos);
+				$('.c'+pos).addClass('perdio');
+				if(conaudio<2) $('audio')[2].play();
+				$('#guia').removeClass('apuntando').removeClass('gano').addClass('perdio');
+				aleluya++;
+			}
+			//$('.c'+pos).css('background-repeat','no-repeat');
+
+			$('.respuesta').unbind('click');
+			$('.true').addClass('buena');
+
+			setTimeout(siguiente_pregunta,2500);
+		}
+
+		function siguiente_pregunta() {
+			if(conaudio<2) {
+				$('audio')[1].pause();	
+				$('audio')[2].pause();	
+			}
+			$('.respuesta').removeClass('buena').removeClass('mala');
+	  		//$('#p'+preguntas[pos]).hide('bounce',{},600);			
+	  		$('#p'+preguntas[pos]).fadeOut('slow');		
+	  		
+	  		pos++;
+
+	  		if(pos>(Total-1)) {
+	  			resultados();
+	  			return false;
+	  		}
+		
+			$('#guia').removeClass('perdio').removeClass('gano').addClass('apuntando');							
+
+	  		//$('.c'+pos).css('background-image','url("images/avion_volando.png")');
+	  		if(conaudio<2) {
+	  			$('audio')[0].play();	
+		  		$('audio')[1].load();
+		  		$('audio')[2].load();	
+				$('audio')[3].load();	
+				$('audio')[4].load();			  		  			
+		  	}	  		
+	  		$('#p'+preguntas[pos]).fadeIn();	  		
+	  		$('.respuesta').bind('click',verificar_respuesta);
+		}
+
+	    function stripHTML(cadena) {
+	    	return cadena.replace(/<[^>]+>/g,'');
+	    }		
+
+		function aleatorio(inferior,superior){
+		    numPosibilidades = superior - inferior + 1
+		    aleat = Math.random() * numPosibilidades
+		    aleat = Math.floor(aleat)
+		    return parseInt(inferior) + aleat
+		}		   
+
+		function resultados() {
+ 						
+			$('#preguntas').hide();	
+			$('#instrucciones').hide();
+			$('#resultados').fadeIn();
+
+			$('#cinta').hide();
+
+			if(conaudio<2) {
+				$('audio')[1].pause();			
+				$('audio')[2].pause();	
+				$('audio')[3].load();	
+				$('audio')[4].load();	
+			}
+			var numeroPreguntas=Total;
+			var buenas=aciertos.length;
+			$("#puntaje").text( buenas + "/" +numeroPreguntas);
+			dato_porcentaje= Math.floor(buenas*100/numeroPreguntas);
+			$("#porcentaje").text( dato_porcentaje + "%");
+			if(dato_porcentaje <= 50){
+				$('#desempenio').addClass('bajo');
+				$("#mensaje").text("Ha tenido pocos aciertos. ¡Debe estudiar más! ");
+			}
+			if(dato_porcentaje > 50 && dato_porcentaje <= 85){
+				$('#desempenio').addClass('basico');
+				$("#mensaje").text("Aunque acertó en algunas respuestas, ¡Debe seguir estudiando!");
+			}
+			if(dato_porcentaje > 85 && dato_porcentaje <= 99){
+				$('#desempenio').addClass('superior');
+				$("#mensaje").text("¡Muy bien, falta muy poco para lograr la meta!");
+			}			
+			if(dato_porcentaje == 100){
+				$('#desempenio').addClass('superior');
+				$("#mensaje").text("!Felicidades¡ ha logrado el mejor puntaje.");
+				//$('#fogata').hide();
+				$('#cinta').hide();
+				//$('#guia').removeClass('apuntando').removeClass('gano').removeClass('perdio').addClass('fogata');
+				$('#btn-volver-comenzar').css('left','164px');
+			}else {
+				//$('#guia').removeClass('apuntando').removeClass('gano').removeClass('perdio').addClass('sentado')
+			}		
+
+			var fraccion = buenas / Total;
+
+			$('.resultados.circle').circleProgress({
+			    value: fraccion,
+			    size:150
+			}).on('circle-animation-progress', function(event, progress) {
+			    //$(this).find('strong').html(parseInt(100 * progress) + '<i>%</i>');
+			    $(this).find('strong').html(parseInt(100 * fraccion) + '<i>%</i>');
+			});	
+			/*if(dato_porcentaje <=85) $('#marco').html('<img src="images/resultados.png">');
+			else $('#marco').html('<img src="images/muy_bien.png">');*/
+			if(conaudio) {
+				$('audio')[0].pause();			
+				$('audio')[1].pause();			
+				$('audio')[2].pause();	
+				if(dato_porcentaje > 85) $('audio')[3].play();	
+				else $('audio')[4].play();	
+			}
+
+  			$('.btn-volver-comenzar').hover(
+				function () {
+					$(this).addClass("btnVolverComenzarHover");
+				},
+				function () {
+					$(this).removeClass("btnVolverComenzarHover");
+				}	  				
+  			);			
+		}		 
+	  	</script>
+	</head>
+  	<body>
+
+  		<div style='width: 1087px; height: 50px; margin:16px auto 0px;'>
+  			<div style='float:left;'>
+  				<h1>ACTIVIDAD DIDÁCTICA</h1>
+  				<p style="text-align:left; margin:0px;">De acuerdo al estudio del contenido temático seleccionar la opción correcta.</p>
+  			</div>
+	        <div style='float: right;'>
+	            <span>¿Audio?</span>
+	           <div class="toogle-container">                          
+	              <div class="toggle toggle-light"></div>
+	            </div>                        
+	        </div>
+  		</div>
+
+  		<div id='contenedor' class='box_round'>   			
+  			<div id='guia' class='apuntando'></div>
+		
+
+  			<div id='resultados'>
+				<div id='desempenio'>
+					<div class='wrap'>
+					    <div class="col-left" style='float:left; margin-right: 16px;margin-top:-12px;'>
+                            <div class="resultados circle"><canvas width="100" height="100"></canvas>
+                                <strong>90<i>%</i></strong>
+                            </div>
+                        </div>
+                        <div class="col-left" style='float:right; width:350px;'>
+							<div style='width:170px; margin:0 auto; clear:both;'>
+								<div id='puntaje' style='float:left; padding:17px 12px 0 0;'>0/8</div>
+								<div style='float:left'><img src='images/flecha.png'></div>
+								<div id='porcentaje' style='float:left; padding:17px 0 0 12px;'>0%</div>
+							</div>
+
+							<div id='mensaje' class='msj'>Lamento los pocos aciertos. ¡debes estudiar más!</div>
+						</div>
+						<div style='float:left; padding:14px 0px;'><div class='btn-volver-comenzar'></div></div>
+					</div>
+				</div>  				
+  			</div>
+
+
+  			<div id='preguntas'><!-- div preguntas -->
+
+  				<!--  cuestionario -->
+	  			<div id='p1' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Es aquel Sistema Operativo que permite la ejecución de varios procesos al mismo tiempo: 
+						</p></div>
+			  			<div class='opciones norandom'>
+				  			<div class='respuesta uno'><p> <span>A</span> MONOTAREA</p></div>
+				  			<div class='respuesta dos true'><p> <span>B</span> MULTITAREA</p></div>
+				  			<div class='respuesta tres'><p> <span>C</span> MONOUSUARIO</p></div>
+				  		</div>
+				  	</div>
+		  		</div>  				
+
+	  			<div id='p2' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Es un Sistema de archivos concebido inicialmente para la plataforma UNIX: </p></div>
+			  			<div class='opciones'>
+				  			<div class='respuesta'><p> <span>A</span> XTS</p></div>
+				  			<div class='respuesta true'><p> <span>B</span> XFS</p></div>
+				  			<div class='respuesta'><p> <span>C</span> KTM</p></div>
+				  		</div>
+				  	</div>
+		  		</div>  
+
+	  			<div id='p3' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Componente de un Sistema Operativo que incorpora las funciones básicas</p></div>
+			  			<div class='opciones'>
+				  			<div class='respuesta true'><p> <span>A</span> NÚCLEO</p></div>
+				  			<div class='respuesta'><p> <span>B</span> BASE</p></div>
+				  			<div class='respuesta'><p> <span>C</span> INTERPRETE</p></div>
+				  		</div>
+				  	</div>
+		  		</div> 
+
+	  			<div id='p4' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Son aquellos sistemas operativos que mantienen a dos o más computadoras unidas a través de algún medio de comunicación: </p></div>
+			  			<div class='opciones norandom'>
+				  			<div class='respuesta uno'><p> <span>A</span> SISTEMAS OPERATIVOS DE UNIÓN</p></div>
+				  			<div class='respuesta dos true'><p> <span>B</span> SISTEMAS OPERATIVOS DE RED</p></div>	
+				  			<div class='respuesta tres'><p> <span>C</span> SISTEMAS OPERATIVOS INDEPENDIENTES</p></div>	
+				  		</div>
+				  	</div>
+		  		</div> 
+
+	  			<div id='p5' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Facilita la comunicación con el sistema operativo a través de un lenguaje de control: </p></div>
+			  			<div class='opciones'>
+				  			<div class='respuesta'><p> <span>A</span> PUENTE DE COMUNICACIÓN</p></div>
+				  			<div class='respuesta'><p> <span>B</span> GESTOR DE DATOS</p></div>	
+				  			<div class='respuesta true'><p> <span>C</span> INTERPRETE DE COMANDOS</p></div>	
+				  		</div>
+				  	</div>
+		  		</div> 		  				  		 		  		
+
+	  			<div id='p6' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Es aquel Sistema Operativo que solo puede ejecutar un proceso a la vez: 
+						</p></div>
+			  			<div class='opciones'>
+				  			<div class='respuesta'><p> <span>A</span> TAREA INICIAL</p></div>
+				  			<div class='respuesta true'><p> <span>B</span> MONOTAREA</p></div>	
+				  			<div class='respuesta'><p> <span>C</span> TAREA POR CICLOS </p></div>	
+				  		</div>
+				  	</div>
+		  		</div> 		
+		  		
+	  			<div id='p7' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Son los Sistemas Operativos que cumplen simultáneamente las necesidades de dos o más usuarios compartiendo los mismos recursos:   </p></div>
+			  			<div class='opciones'>
+				  			<div class='respuesta'><p> <span>A</span> VARIOS</p></div>
+				  			<div class='respuesta'><p> <span>B</span> MONOUSUARIO</p></div>	
+				  			<div class='respuesta true'><p> <span>C</span> MULTIUSUARIO</p></div>	
+				  		</div>
+				  	</div>
+		  		</div> 
+
+	  			<div id='p8' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Software que constituye la parte más importante del Sistema Operativo:</p></div>
+			  			<div class='opciones'>
+				  			<div class='respuesta'><p> <span>A</span> SOFTWARE PRINCIPAL</p></div>
+				  			<div class='respuesta true'><p> <span>B</span> KERNEL</p></div>	
+				  			<div class='respuesta'><p> <span>C</span> SISTEMA OPERATIVO BASICO</p></div>	
+				  		</div>
+				  	</div>
+		  		</div> 	  
+
+	  			<div id='p9' class="opcion">
+	  				<div class='wrap'>
+			  			<div class='question'><p>Interfaz de programación de aplicaciones: </p></div>
+			  			<div class='opciones'>
+				  			<div class='respuesta true'><p> <span>A</span> API</p></div>
+				  			<div class='respuesta'><p> <span>B</span> INTERFAZ PARA SISTEMAS OPERATIVOS IBM</p></div>	
+				  			<div class='respuesta'><p> <span>C</span> C</p></div>	
+				  		</div>
+				  	</div>
+		  		</div> 	  
+  		  		  		  				  						  				  		  		  		
+  				<!--  fin de cuestionario -->
+
+  			</div><!-- fin preguntas -->
+
+			<div id='cinta'>
+				<!-- <div class='cinta'> -->
+					<div class='c0 circulo normal'></div>
+					<div class='c1 circulo normal'></div>
+					<div class='c2 circulo normal'></div>
+					<div class='c3 circulo normal'></div>
+					<div class='c4 circulo normal'></div>
+					<div class='c5 circulo normal'></div>
+					<div class='c6 circulo normal'></div>
+					<div class='c7 circulo normal'></div>
+					<div class='c8 circulo normal'></div>
+				<!-- </div> -->
+			</div>  			
+
+  			<div style='clear:both'></div>
+
+			<div class='sonidos'>
+				<audio preload>
+				  <source src='audios/screen-change.mp3' type='audio/mp3'>
+				  <source src='audios/screen-change.ogg' type='audio/ogg'>
+				</audio>
+				<audio preload>
+				  <source src='audios/success.mp3' type='audio/mp3'>
+				  <source src='audios/success.ogg' type='audio/ogg'>
+				</audio>
+				<audio preload>
+				  <source src='audios/fail.mp3' type='audio/mp3'>
+				  <source src='audios/fail.ogg' type='audio/ogg'>
+				</audio>
+				<audio preload>
+				  <source src='audios/end-game-success.mp3' type='audio/mp3'>
+				  <source src='audios/end-game-success.ogg' type='audio/ogg'>
+				</audio>
+				<audio preload>
+				  <source src='audios/end-game-fail.mp3' type='audio/mp3'>
+				  <source src='audios/end-game-fail.ogg' type='audio/ogg'>
+				</audio>  
+			</div>	  			
+
+  		</div>
+
+
+		<form name='test' id='test'></form>
+  	</body>  
+
+</html>  	
